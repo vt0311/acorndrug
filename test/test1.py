@@ -1,7 +1,7 @@
 '''
 Created on 2017. 11. 13.
 
-@author: acorn111
+@author: acorn
 '''
 
 from xml.etree.ElementTree import parse
@@ -70,6 +70,7 @@ for onedata in range(len(myframe)):
     returncompany = imsi['회수의무자']
     returnday = imsi['회수일자']
     productnum = imsi['제조번호']
+    
     sql = "insert into drugkorea values('" + name + "', '" +  stdcode + "', '" + productname + "', '" + productstdcode + "', '" + returncompany + "','" + returnday + " ', ' " + productnum + " ')"
     # print( sql )
     mycursor.execute( sql )
