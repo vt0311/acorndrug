@@ -1,5 +1,7 @@
 from xml.etree.ElementTree import parse
 from pandas import DataFrame
+import pandas as pd
+import matplotlib.pyplot as plt
 
 tree = parse('DrugSafetyInformation(2016.10)_Revised.xml')
 myroot = tree.getroot()
@@ -17,8 +19,20 @@ for item in data:
     totallist.append(sublist)
     
 df = DataFrame(totallist, columns=cols)
-print(df)
 
-mygroup = df.groupby('위험등급')['제품명']
-print(mygroup.count())
+newdf = df[df['회수사유']=='자진회수']
+newdf = newdf.reindex(columns=cols)
 
+
+mynewgroup = newdf.groupby(['위험등급'])['제품명'].count()
+
+mygroup = df.groupby(['위험등급'])['제품명'].count()
+
+print(mygroup)
+print(mynewgroup)
+
+newnew = DataFrame([mygroup, mynewgroup])
+print(newnew)
+# plt.figure()
+# plt.plot(newnew)
+# plt.show()
