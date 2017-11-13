@@ -1,7 +1,7 @@
 '''
 Created on 2017. 11. 13.
 
-@author: acorn
+@author: acorn111
 '''
 
 from xml.etree.ElementTree import parse
