@@ -1,5 +1,4 @@
 from xml.etree.ElementTree import parse
-from pandas import DataFrame
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -18,21 +17,26 @@ for item in data:
         sublist.append(d.text)
     totallist.append(sublist)
     
-df = DataFrame(totallist, columns=cols)
+df = pd.DataFrame(totallist, columns=cols)
+new_df = df.copy(True)
+for i in range(len(new_df)-1,-1,-1):
+    if '자진' not in df['회수사유'].ix[i]:
+        new_df = new_df.drop(i)
+print(new_df)
 
-newdf = df[df['회수사유']=='자진회수']
-newdf = newdf.reindex(columns=cols)
-
-
-mynewgroup = newdf.groupby(['위험등급'])['제품명'].count()
-
+mynewgroup = new_df.groupby(['위험등급'])['회수일자'].count()
+ 
 mygroup = df.groupby(['위험등급'])['제품명'].count()
 
-print(mygroup)
-print(mynewgroup)
 
-newnew = DataFrame([mygroup, mynewgroup])
+newnew = pd.DataFrame([mygroup, mynewgroup]).transpose()
+newnew.rename(columns={'제품명':'전체','회수일자':'자진회수'}, inplace=True)
 print(newnew)
-# plt.figure()
-# plt.plot(newnew)
-# plt.show()
+plt.rc('font', family='Malgun Gothic')
+newnew.plot()
+# plt.legend(loc='upper right')
+# plt.title('위험 등급 별 자진회수 빈도수 분석')
+# plt.xlabel('위험 등급')
+# plt.ylabel('빈도 수')
+# plt.grid(True)
+plt.show()
