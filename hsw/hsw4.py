@@ -58,6 +58,12 @@ result.plot(kind='bar')
  
 filename = 'drug4.png'
 
+#plt.legend(loc='upper right')
+plt.title('회수 의무자 빈도수 분석')
+plt.xlabel('회수 의무자')
+plt.ylabel('빈도 수')
+
+plt.xticks(rotation='70')
 plt.savefig(filename, dpi=400, bbox_inches='tight')
 plt.show()
 
