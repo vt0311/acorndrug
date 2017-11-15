@@ -63,7 +63,7 @@ plt.title('회수 의무자 빈도수 분석')
 plt.xlabel('회수 의무자')
 plt.ylabel('빈도 수')
 
-plt.xticks(rotation='25')
+plt.xticks(rotation='20')
 plt.savefig(filename, dpi=400, bbox_inches='tight')
 plt.show()
 
