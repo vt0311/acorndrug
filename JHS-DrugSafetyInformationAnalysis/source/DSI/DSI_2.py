@@ -18,21 +18,25 @@ for item in data:
     totallist.append(sublist)
     
 df = pd.DataFrame(totallist, columns=cols)
+new_df = df.copy(True)
+for i in range(len(new_df)-1,-1,-1):
+    if '자진' not in df['회수사유'].ix[i]:
+        new_df = new_df.drop(i)
+print(new_df)
 
-print(df.groupby(['회수사유'])['제품명'].count)
+mynewgroup = new_df.groupby(['위험등급'])['회수일자'].count()
+ 
+mygroup = df.groupby(['위험등급'])['제품명'].count()
 
 
-# mygroup = df.groupby(['위험등급'])['제품명'].count()
-
-# 
-# newnew = pd.DataFrame([mygroup, mynewgroup]).transpose()
-# newnew.rename(columns={'제품명':'전체','회수일자':'자진회수'}, inplace=True)
-# print(newnew)
-# plt.rc('font', family='Malgun Gothic')
-# newnew.plot(kind='bar', rot=0)
-# # plt.legend(loc='upper right')
-# # plt.title('위험 등급 별 자진회수 빈도수 분석')
-# plt.xlabel('위험 등급')
-# plt.ylabel('빈도 수')
-# plt.grid(True)
-# plt.show()
+newnew = pd.DataFrame([mygroup, mynewgroup]).transpose()
+newnew.rename(columns={'제품명':'전체','회수일자':'자진회수'}, inplace=True)
+print(newnew)
+plt.rc('font', family='Malgun Gothic')
+newnew.plot(kind='bar', rot=0)
+# plt.legend(loc='upper right')
+# plt.title('위험 등급 별 자진회수 빈도수 분석')
+plt.xlabel('위험 등급')
+plt.ylabel('빈도 수')
+plt.grid(True)
+plt.show()
