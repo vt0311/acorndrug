@@ -8,7 +8,7 @@ import cx_Oracle
 
 conn = cx_Oracle.connect('scott/tiger@localhost:1521/xe')
 cursor = conn.cursor()
-cursor.execute('select * from board')
+cursor.execute('select * from drug_safety')
 for row in cursor:
         print(row)
 cursor.close()
