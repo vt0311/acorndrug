@@ -120,17 +120,19 @@ def problem_7(df):
     plt.xlabel('제품 수')
     plt.ylabel('위험등급 평균')
     
-if __name__ == '__main__':
+def JHS_main():
     df = readFile()
     plt.rc('font', family='Malgun Gothic')
+    
     print('[P2] : 위험 등급별 전체 빈도수와 자진회수 빈도수(막대그래프)')
     problem_2(df)
+    plt.savefig('P1-2.png', dpi=800, bbox_inches='tight')
      
-    print('[P6] : 회수일자와 제조일자간 일수 계산 후 판매일수라는 컬럼으로 저장 후,\n\t판매일수와 위험등급 간 상관관계 분석')
+    print('[P6] : 판매일수(회수일자-제조일자)와 위험등급 간 상관관계 분석')
     problem_6(df)
+    plt.savefig('P1-6.png', dpi=800, bbox_inches='tight')
     
-    print('[P7] : 회수의무자의 빈도수와 위험등급의 평균 간 상환관계 분석')
+    print('[P7] : 회수의무자의 빈도수와 위험등급의 평균 간 상관관계 분석')
     problem_7(df)
-    
-    plt.show()
+    plt.savefig('P1-7.png', dpi=800, bbox_inches='tight')
 
