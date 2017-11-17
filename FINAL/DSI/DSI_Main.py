@@ -1,6 +1,6 @@
 import DSI.DSI_P4_HSW as HSW
 import DSI.DSI_P35_OKC as OKC
-import DSI.DSI_P267_JHS as JHS
+import DSI.DSI_P1267_JHS as JHS
 import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
