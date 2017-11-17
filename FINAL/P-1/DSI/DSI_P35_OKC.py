@@ -1,4 +1,4 @@
-from DSI.DSI_P267_JHS import readFile
+from DSI.DSI_P1267_JHS import readFile
 from xml.etree.ElementTree import parse
 import matplotlib
 import matplotlib.pyplot as plt
@@ -16,7 +16,7 @@ def setKoreanFont():
 def __saveWordCloud( wordInfo, filename ):
     taglist = pytagcloud.make_tags(dict(wordInfo).items(), maxsize=50)
     pytagcloud.create_tag_image(taglist, filename, \
-                                size=(1920, 960), fontname='korean', rectangular=False)
+                                size=(1020, 960), fontname='korean', rectangular=False)
     webbrowser.open( filename )
 
 def problem_3(df):
@@ -57,7 +57,7 @@ def problem_5(df):
     plt.title('연단위 등록일자 빈도수 분석')
     plt.xlabel('연도')
     plt.ylabel('빈도 수')
-    plt.savefig('P1-5.png', dpi=400, bbox_inches='tight')
+    plt.savefig('P1-5.png', dpi=1600, bbox_inches='tight')
 
 def OKC_main():
     setKoreanFont()

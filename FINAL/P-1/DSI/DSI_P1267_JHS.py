@@ -21,6 +21,26 @@ def readFile():
         
     return pd.DataFrame(totallist, columns=cols)
 
+def problem_1(df):
+    df = df.copy(True)
+    mygroup = df.groupby('위험등급')['회수사유']
+    new_df = pd.DataFrame()
+    new_df['위험등급'] = mygroup
+    new_df['회수사유 가짓수'] = None
+    for index, item in new_df.iterrows():
+        rank, lists = item['위험등급']
+        item['회수사유 가짓수'] = len(lists.unique())
+        item['위험등급'] = rank
+        new_df.ix[index] = item
+    
+    new_df = new_df.rename(index=new_df['위험등급']).reindex(columns=['회수사유 가짓수'])
+    
+    new_df.plot(kind='bar', rot=0)
+    plt.suptitle('위험등급별 회수사유 가짓수')
+    plt.xlabel('위험등급')
+    plt.ylabel('회수사유 가짓수')
+    plt.grid(True)
+    
 def problem_2(df):
     new_df = df.copy(True)
     for i in range(len(new_df)-1,-1,-1):
@@ -124,15 +144,18 @@ def JHS_main():
     df = readFile()
     plt.rc('font', family='Malgun Gothic')
     
+    print('[P1] : 위험 등급별 회수사유 가짓수(막대그래프)')
+    problem_1(df)
+    plt.savefig('P1-1.png', dpi=800, bbox_inches='tight')
+    
     print('[P2] : 위험 등급별 전체 빈도수와 자진회수 빈도수(막대그래프)')
     problem_2(df)
     plt.savefig('P1-2.png', dpi=800, bbox_inches='tight')
-     
+      
     print('[P6] : 판매일수(회수일자-제조일자)와 위험등급 간 상관관계 분석')
     problem_6(df)
     plt.savefig('P1-6.png', dpi=800, bbox_inches='tight')
-    
+     
     print('[P7] : 회수의무자의 빈도수와 위험등급의 평균 간 상관관계 분석')
     problem_7(df)
     plt.savefig('P1-7.png', dpi=800, bbox_inches='tight')
-
