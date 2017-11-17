@@ -52,7 +52,7 @@ for onedata in range(len(myframe)):
     dangergrade = imsi['위험등급']
     regdate = imsi['등록일자']
     
-    sql = "insert into DRUG_SAFETY(제품명, 표준코드, 품목명, 품목기준코드, 회수의무자, 회수일자, 제조번호, 포장단위, 회수사유, 위험등급, 등록일자)values('" + name + "', '" +  stdcode + "', '" + productname + "', '" + productstdcode + "', '" + returncompany + "','" + returndate + " ', ' " + productnum + " ','" + productdate + " ','" + packageunit + "','" + returnreason + "','" + dangergrade + "','" + regdate + "')"
+    sql = "insert into DRUG_SAFETY(제품명, 표준코드, 품목명, 품목기준코드, 회수의무자, 회수일자, 제조번호, 포장단위, 회수사유, 위험등급, 등록일자) values('" + name + "', '" +  stdcode + "', '" + productname + "', '" + productstdcode + "', '" + returncompany + "','" + returndate + "', '" + productnum + "','" + productdate + "','" + packageunit + "','" + returnreason + "','" + dangergrade + "','" + regdate + "')"
 
     cursor.execute( sql )
 
