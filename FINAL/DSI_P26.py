@@ -86,7 +86,7 @@ def problem_6(df):
             df = df.drop(index)
     
     fig = plt.figure()
-    fig.suptitle('상관관계 분석')
+    fig.suptitle('판매일수와 위험등급 간 상관관계')
     r = correlation(list(df['판매일수']),list(df['위험등급']))
     print('상관계수 :', r)
     plt.grid(True)
@@ -101,6 +101,6 @@ if __name__ == '__main__':
     print('[P2] : 위험 등급별 전체 빈도수와 자진회수 빈도수(막대그래프)')
     problem_2(df)
     
-    print('[P6] : 회수일자와 제조일자간 일수 계산 후 판매일수라는 컬럼으로 저장 후,\n판매일수와 위험등급 간 상관관계 분석')
+    print('[P6] : 회수일자와 제조일자간 일수 계산 후 판매일수라는 컬럼으로 저장 후,\n\t판매일수와 위험등급 간 상관관계 분석')
     problem_6(df)
 
