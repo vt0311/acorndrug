@@ -93,14 +93,44 @@ def problem_6(df):
     plt.scatter(list(df['판매일수']), list(df['위험등급']), edgecolor='none', alpha=0.75, s=15, c='blue')
     plt.ylabel('위험 등급')
     plt.xlabel('판매일수')
-    plt.show()
+    
+def problem_7(df):
+    df = df.copy(True)
+    
+    for index, item in df.iterrows():
+        if item.위험등급 == '9' or item.위험등급 == '해당없음':
+            df = df.drop(index)
+            
+    df.회수의무자 = df.회수의무자.apply(lambda x : x.replace('(주)','').replace('(유)',''))
+    df.위험등급 = df.위험등급.apply(lambda x : int(x))
+    
+    product_count = df.groupby('회수의무자')['제품명'].count()
+    rank_mean = df.groupby('회수의무자')['위험등급'].mean()
+    
+    result = pd.DataFrame()
+    result['제품 수'] = product_count
+    result['위험등급 평균'] = rank_mean
+    
+    fig = plt.figure()
+    fig.suptitle('회수 의무자 별 위험 제품 수와 위험등급 평균 간 상관관계')
+    r = correlation(list(result['제품 수']),list(result['위험등급 평균']))
+    print('상관계수 :', r)
+    plt.grid(True)
+    plt.scatter(list(result['제품 수']), list(result['위험등급 평균']), edgecolor='none', alpha=0.75, s=15, c='blue')
+    plt.xlabel('제품 수')
+    plt.ylabel('위험등급 평균')
     
 if __name__ == '__main__':
     df = readFile()
     plt.rc('font', family='Malgun Gothic')
     print('[P2] : 위험 등급별 전체 빈도수와 자진회수 빈도수(막대그래프)')
     problem_2(df)
-    
+     
     print('[P6] : 회수일자와 제조일자간 일수 계산 후 판매일수라는 컬럼으로 저장 후,\n\t판매일수와 위험등급 간 상관관계 분석')
     problem_6(df)
+    
+    print('[P7] : 회수의무자의 빈도수와 위험등급의 평균 간 상환관계 분석')
+    problem_7(df)
+    
+    plt.show()
 
