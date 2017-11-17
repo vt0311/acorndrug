@@ -3,48 +3,61 @@ Created on 2017. 11. 17
 
 @author: hsw
 '''
+from xml.etree.ElementTree import parse
+from pandas import DataFrame
+import cx_Oracle 
 
-import cx_Oracle as oracle
 
+tree = parse('drug_201610.xml')
+myroot = tree.getroot() # 최상위 엘리먼트 취들
+            
+alldrugs = myroot.findall('Row')
+  
 
-def makeFileName():
-   
-    names = [str(2002+i) for i in range(1)]
-    parts = ['_part1', '_part2']
+totallist = [] #정보들을 저장할 리스트
+for onedrug in alldrugs:
+    childs = onedrug.getchildren()
+    sublist = [] # 1개의  정보
+    for onedata in childs:
+        # 콤마와 쌍따옴표는 빈 문자열로 처리하도록 한다.
+        mydata = onedata.text.replace(',', '')
+        mydata = mydata.replace('"', '')
+        sublist.append( mydata )
+    # print('-------------------')
+    totallist.append(sublist)
 
-    for i in range(1):
-        temp_name = names[i]
-        names[i] += parts[1]
-        names.insert(i, temp_name+parts[0])
+mycolumn = ['제품명', '표준코드', '품목명' , '품목기준코드' , '회수의무자' , '회수일자' , '제조번호' , '제조일자', '포장단위' , '회수사유' , '위험등급'  , '등록일자' ]
+
+myframe = DataFrame(totallist, columns=mycolumn)
+
         
-    return names
-
-def insertData(sep_name):
-    conn = oracle.connect('scott/tiger@localhost:1521/xe')
-    cur = conn.cursor()
-    sql = "INSERT INTO DRUGPRESC2002(base_year, user_id, pres_id, serial_num, sex, age_code, sido_code, recuperate_date, drug_ingredient_code, dose_once, dose_oneday, dose_days, unit_cost, price) values('{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}', '{}')"
-      
-    # csv_cols = ['기준년도', '가입자일련번호', '처방내역일련번호', '일련번호', '성별코드', '연령대코드(5세단위)', '시도코드', '요양개시일자', '약품일반성분명코드', '1회 투약량', '1일투약량', '총투여일수', '단가', '금액']
-    fileDir = 'NHIS_OPEN_T60_2015/'
-    fileName = 'NHIS_OPEN_T60_{}.CSV'.format(sep_name)
-      
-    with open(fileDir+fileName, 'r') as f:
-        f.readline()
-        while True:
-            temp = f.readline().split(',')
-            if(len(temp) == 1): break
-            del temp[14]
-            cur.execute(sql.format(*temp))
-            conn.commit()
-            print(temp)
             
 conn = cx_Oracle.connect('scott/tiger@localhost:1521/xe')
 
 cursor = conn.cursor()
 
-cursor.execute("insert into diary values('2nd','ro2','hi2','20171023')")
+
+for onedata in range(len(myframe)):
+    imsi = myframe.ix[onedata]
+    name = imsi['제품명']
+    stdcode = imsi['표준코드']
+    productname = imsi['품목명']
+    productstdcode = imsi['품목기준코드']
+    returncompany = imsi['회수의무자']
+    returndate = imsi['회수일자']
+    productnum = imsi['제조번호']
+    productdate = imsi['제조일자']
+    packageunit = imsi['포장단위']
+    returnreason = imsi['회수사유']
+    dangergrade = imsi['위험등급']
+    regdate = imsi['등록일자']
+    
+    sql = "insert into drug_safety values('" + name + "', '" +  stdcode + "', '" + productname + "', '" + productstdcode + "', '" + returncompany + "','" + returndate + " ', ' " + productnum + " ','" + productdate + " ','" + packageunit + " ','" + returnreason + " ','" + dangergrade + " ','" + regdate + "  ')"
+
+    cursor.execute( sql )
 
 conn.commit()
+
 
 cursor.close()
 
