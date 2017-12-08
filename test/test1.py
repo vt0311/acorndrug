@@ -31,8 +31,8 @@ for onestore in alldrugs:
     # print('-------------------')
     totallist.append(sublist)
 
-mycolumn = ['제품명', '표준코드', '품목명', '품목기준코드', '회수의무자', '회수일자', '제조번호']
-# mycolumn = ['제품명', '표준코드', '품목명', '품목기준코드', '회수의무자', '회수일자', '제조번호', '제조일자', '포장단위', '회수사유', '위험등급', '등록일자']
+#mycolumn = ['제품명', '표준코드', '품목명', '품목기준코드', '회수의무자', '회수일자', '제조번호']
+mycolumn = ['제품명', '표준코드', '품목명', '품목기준코드', '회수의무자', '회수일자', '제조번호', '제조일자', '포장단위', '회수사유', '위험등급', '등록일자']
 # myframe은 약 정보를 담고 있는 DataFrame이다.
 myframe = DataFrame(totallist, columns=mycolumn)
 # print( type(myframe) ) # <class 'pandas.core.frame.DataFrame'>
@@ -47,7 +47,7 @@ myframe = DataFrame(totallist, columns=mycolumn)
 import sqlite3
 import pandas as pd
 
-conn = sqlite3.connect('drug.db')
+conn = sqlite3.connect('drug2.db')
 
 # cursor(커서) : 실제 db에 접속해서 무엇인가를 요청하는 객체
 mycursor = conn.cursor()
@@ -58,21 +58,31 @@ except sqlite3.OperationalError:
     print('테이블이 존재하지 않습니다.')
 
 mycursor.execute('''CREATE TABLE drugkorea
-             (name text primary key, stdcode text, productname text, productstdcode text, returncompany text, returnday text, productnum text)''')
+             (name text, stdcode text, 
+             product_name text, product_stdcode text, 
+             return_company text, return_date text, 
+             product_num text, product_date text,
+             unit text, reason text, danger_grade text, reg_date text)''')
 
 
 for onedata in range(len(myframe)):
     imsi = myframe.ix[onedata]
     name = imsi['제품명']
     stdcode = imsi['표준코드']
-    productname = imsi['품목명']
-    productstdcode = imsi['품목기준코드']
-    returncompany = imsi['회수의무자']
-    returnday = imsi['회수일자']
-    productnum = imsi['제조번호']
+    product_name = imsi['품목명']
+    product_stdcode = imsi['품목기준코드']
+    return_company = imsi['회수의무자']
+    return_date = imsi['회수일자']
+    product_num = imsi['제조번호']
+    product_date = imsi['제조일자']
+    unit = imsi['포장단위']
+    reason = imsi['회수사유']
+    danger_grade = imsi['위험등급']
+    reg_date = imsi['등록일자']
     
-    sql = "insert into drugkorea values('" + name + "', '" +  stdcode + "', '" + productname + "', '" + productstdcode + "', '" + returncompany + "','" + returnday + " ', ' " + productnum + " ')"
-    # print( sql )
+    sql = "insert into drugkorea values('" + name + "', '" +  stdcode + "', '" + product_name + "', '" + product_stdcode + "', '" + return_company + "','" + return_date + "', '" + product_num + "', '" + product_date + "', '" + unit + "', '" + reason + "', '" + danger_grade + "', '" + reg_date + "')"
+    
+    print( sql )
     mycursor.execute( sql )
 
 conn.commit()

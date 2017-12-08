@@ -4,7 +4,7 @@
 
 fileDir = 'C:/Users/acorn/Desktop/'
 fileName_read = 'full database.xml'
-fileName_write = 'parsed2.xml'
+fileName_write = 'parsed3.xml'
 
 with open(fileDir+fileName_read, 'r', encoding='UTF-8') as drbk_file:
     with open(fileDir+fileName_write, 'w', encoding='UTF-8') as wf:
@@ -14,6 +14,7 @@ with open(fileDir+fileName_read, 'r', encoding='UTF-8') as drbk_file:
         atc_flag = False # use for recognize a <atc-codes>
         product_flag = False # use for recognize a <products>
         properties_flag = False
+        druginteraction_flag = False
         
         while True:
             temp = drbk_file.readline()
@@ -64,4 +65,16 @@ with open(fileDir+fileName_read, 'r', encoding='UTF-8') as drbk_file:
                 properties_flag = False
                 wf.write(temp)
             elif properties_flag:
+                wf.write(temp)  
+                
+            # 하승원 추가2
+            elif (not druginteraction_flag) and temp.strip() == '<drug-interaction/>':
+                wf.write(temp)
+            elif (not druginteraction_flag) and temp.strip() == '<drug-interaction>':
+                druginteraction_flag = True
+                wf.write(temp)
+            elif druginteraction_flag and temp.startswith('  </drug-interaction>'):
+                druginteraction_flag = False
+                wf.write(temp)
+            elif druginteraction_flag:
                 wf.write(temp)    

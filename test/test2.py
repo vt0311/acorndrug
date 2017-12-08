@@ -1,7 +1,7 @@
 '''
-Created on 2017. 11. 13.
+Created on 2017. 12.08
 
-@author: acorn
+@author: hsw
 '''
 
 from xml.etree.ElementTree import parse
@@ -31,8 +31,9 @@ for onestore in alldrugs:
     # print('-------------------')
     totallist.append(sublist)
 
-mycolumn = ['제품명', '표준코드', '품목명', '품목기준코드', '회수의무자', '회수일자', '제조번호']
-# mycolumn = ['제품명', '표준코드', '품목명', '품목기준코드', '회수의무자', '회수일자', '제조번호', '제조일자', '포장단위', '회수사유', '위험등급', '등록일자']
+#mycolumn = ['제품명', '표준코드', '품목명', '품목기준코드', '회수의무자', '회수일자', '제조번호']
+mycolumn = ['제품명', '표준코드', '품목명', '품목기준코드', '회수의무자', '회수일자', '제조번호', '제조일자', '포장단위', '회수사유', '위험등급', '등록일자']
+
 # myframe은 약 정보를 담고 있는 DataFrame이다.
 myframe = DataFrame(totallist, columns=mycolumn)
 # print( type(myframe) ) # <class 'pandas.core.frame.DataFrame'>
@@ -70,6 +71,7 @@ for onedata in range(len(myframe)):
     returncompany = imsi['회수의무자']
     returnday = imsi['회수일자']
     productnum = imsi['제조번호']
+    
     sql = "insert into drugkorea values('" + name + "', '" +  stdcode + "', '" + productname + "', '" + productstdcode + "', '" + returncompany + "','" + returnday + " ', ' " + productnum + " ')"
     # print( sql )
     mycursor.execute( sql )
