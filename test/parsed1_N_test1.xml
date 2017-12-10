@@ -1,0 +1,2823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <drugbank xmlns="http://www.drugbank.ca" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.drugbank.ca http://www.drugbank.ca/docs/drugbank.xsd" version="5.0" exported-on="2017-10-02"> -->
+<!--drug type="small molecule" created="2005-06-13" updated="2017-09-01"-->
+  <!--name>Choline</name-->
+<root>
+    <header>
+    	<header>name</header>
+    	<header>labeller</header>
+    	<header>ndc-id</header>
+    	<header>ndc-product-code</header>
+    	<header>dpd-id</header>
+    	<header>started-marketing-on</header>
+    	<header>ended-marketing-on</header>
+    	<header>dosage-form</header>
+    	<header>strength</header>
+    	<header>route</header>
+    	<header>fda-application-number</header>
+    	<header>generic</header>
+    	<header>over-the-counter</header>
+    	<header>approved</header>
+    	<header>country</header>
+    	<header>source</header>
+	</header>
+    <product>
+      <name>Advanced 2000 Capsules</name>
+      <labeller>Body Gold, A Division Of Pep Products, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02241085</dpd-id>
+      <started-marketing-on>2000-01-01</started-marketing-on>
+      <ended-marketing-on>2002-08-22</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Alertonic</name>
+      <labeller>Odan Laboratories Ltd</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02103052</dpd-id>
+      <started-marketing-on>1995-12-31</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Elixir</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Alertonic</name>
+      <labeller>Merrell Pharms Inc., Division Of Merrell Dow (Can)</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00134228</dpd-id>
+      <started-marketing-on>1967-12-31</started-marketing-on>
+      <ended-marketing-on>1996-09-09</ended-marketing-on>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>American Eagle Energizer Plus Vitamin Supplement Drink</name>
+      <labeller>P.S.W.C. Co., Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02231087</dpd-id>
+      <started-marketing-on/>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>American Plus Energy &amp; Vitamin Drink</name>
+      <labeller>P.S.W.C. Co., Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02231199</dpd-id>
+      <started-marketing-on/>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B 50 Capsules</name>
+      <labeller>Rheingold Food International Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00643041</dpd-id>
+      <started-marketing-on>1987-12-31</started-marketing-on>
+      <ended-marketing-on>2007-07-26</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B Complex 25mg Vitamin Supplement</name>
+      <labeller>Garden State Nutritionals</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02238511</dpd-id>
+      <started-marketing-on>1998-08-31</started-marketing-on>
+      <ended-marketing-on>2000-06-07</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B Complex 50 Vitamin Cap</name>
+      <labeller>Bioforce Canada Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01983490</dpd-id>
+      <started-marketing-on>1994-12-31</started-marketing-on>
+      <ended-marketing-on>1997-07-22</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B Complex 50+ Caplet</name>
+      <labeller>Health Wise Nutrition Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02005271</dpd-id>
+      <started-marketing-on>1994-12-31</started-marketing-on>
+      <ended-marketing-on>2002-07-18</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B Compound 50mg Tab</name>
+      <labeller>Gahler Enterprises Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00730491</dpd-id>
+      <started-marketing-on>1987-12-31</started-marketing-on>
+      <ended-marketing-on>2009-09-28</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-100 Caps</name>
+      <labeller>Now Foods</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02247036</dpd-id>
+      <started-marketing-on>2005-05-19</started-marketing-on>
+      <ended-marketing-on>2008-07-11</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-100 Hi Potency B Vitamins Tab</name>
+      <labeller>Natrol, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02060256</dpd-id>
+      <started-marketing-on>1994-12-31</started-marketing-on>
+      <ended-marketing-on>2009-05-07</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-100 Vitamin Supplement</name>
+      <labeller>Garden State Nutritionals</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02238740</dpd-id>
+      <started-marketing-on>1998-09-22</started-marketing-on>
+      <ended-marketing-on>2000-06-07</ended-marketing-on>
+      <dosage-form>Tablet, extended release</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-50 Complex</name>
+      <labeller>Vita Health Products Inc</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00398837</dpd-id>
+      <started-marketing-on>1977-12-31</started-marketing-on>
+      <ended-marketing-on>2004-07-26</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-50 Hi Potency B Vitamins Tab</name>
+      <labeller>Natrol, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02060264</dpd-id>
+      <started-marketing-on>1994-12-31</started-marketing-on>
+      <ended-marketing-on>2006-09-26</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-complex</name>
+      <labeller>Enrich International</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02238709</dpd-id>
+      <started-marketing-on>1999-11-11</started-marketing-on>
+      <ended-marketing-on>2001-09-28</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-complex 100</name>
+      <labeller>Great Earth Companies, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02230975</dpd-id>
+      <started-marketing-on>1998-08-25</started-marketing-on>
+      <ended-marketing-on>2002-10-02</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-complex 50</name>
+      <labeller>Great Earth Companies, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02230971</dpd-id>
+      <started-marketing-on>1998-08-25</started-marketing-on>
+      <ended-marketing-on>2002-10-02</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-complex Tab</name>
+      <labeller>SantÉ Naturelle (Ag) LtÉe</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00705446</dpd-id>
+      <started-marketing-on>1988-12-31</started-marketing-on>
+      <ended-marketing-on>2002-06-18</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-complex With Vitamin C, Biotin, Folic Acid</name>
+      <labeller>Wn Pharmaceuticals Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02243653</dpd-id>
+      <started-marketing-on>2001-11-23</started-marketing-on>
+      <ended-marketing-on>2009-09-28</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-complex-50 Tab</name>
+      <labeller>Jr Carlson Labs Inc</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00627364</dpd-id>
+      <started-marketing-on>1998-10-25</started-marketing-on>
+      <ended-marketing-on>2005-09-15</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-plex</name>
+      <labeller>Wn Pharmaceuticals Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02240982</dpd-id>
+      <started-marketing-on>1999-10-20</started-marketing-on>
+      <ended-marketing-on>2000-01-28</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B-plus - Tab</name>
+      <labeller>Champion's Choice Advanced Nutrition Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02226618</dpd-id>
+      <started-marketing-on>1997-06-11</started-marketing-on>
+      <ended-marketing-on>1999-08-28</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>B50 Complex</name>
+      <labeller>Preferred Nutrition Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02247911</dpd-id>
+      <started-marketing-on>2003-10-29</started-marketing-on>
+      <ended-marketing-on>2005-08-04</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Balanced B 125 Srt</name>
+      <labeller>Anabolic Laboratories Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00526703</dpd-id>
+      <started-marketing-on>1981-12-31</started-marketing-on>
+      <ended-marketing-on>1996-10-02</ended-marketing-on>
+      <dosage-form>Tablet, extended release</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Betacol</name>
+      <labeller>Therapeutic Foods Co.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00191388</dpd-id>
+      <started-marketing-on>1989-12-15</started-marketing-on>
+      <ended-marketing-on>1996-09-09</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Bev 29 Tab</name>
+      <labeller>Beverly International Nutrition</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00703184</dpd-id>
+      <started-marketing-on>1987-12-31</started-marketing-on>
+      <ended-marketing-on>1998-08-01</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Bev B-150</name>
+      <labeller>Beverly International Nutrition</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00640492</dpd-id>
+      <started-marketing-on>1986-12-31</started-marketing-on>
+      <ended-marketing-on>1998-08-01</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Bev-lipo-1000</name>
+      <labeller>Beverly International Nutrition</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00652202</dpd-id>
+      <started-marketing-on>1986-12-31</started-marketing-on>
+      <ended-marketing-on>1998-08-01</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Biosculpt</name>
+      <labeller>Maxion Nutrition Corp.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02243775</dpd-id>
+      <started-marketing-on>2002-06-10</started-marketing-on>
+      <ended-marketing-on>2004-07-20</ended-marketing-on>
+      <dosage-form>Solution</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline &amp; Inositol Caps</name>
+      <labeller>Twin Laboratories Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01984306</dpd-id>
+      <started-marketing-on>1995-12-31</started-marketing-on>
+      <ended-marketing-on>1999-11-10</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline 250 mg</name>
+      <labeller>Swiss Herbal Remedies Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00189219</dpd-id>
+      <started-marketing-on>1971-12-31</started-marketing-on>
+      <ended-marketing-on>2004-09-03</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength>250 mg</strength>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>true</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline 250mg</name>
+      <labeller>General Nutrition Canada Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02229386</dpd-id>
+      <started-marketing-on>1997-04-18</started-marketing-on>
+      <ended-marketing-on>2005-08-05</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength>250 mg</strength>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>true</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline 250mg</name>
+      <labeller>Great Earth Companies, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02230607</dpd-id>
+      <started-marketing-on>1998-08-25</started-marketing-on>
+      <ended-marketing-on>2002-10-02</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength>250 mg</strength>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>true</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline and Inositol 250mg/250mg</name>
+      <labeller>Great Earth Companies, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02230604</dpd-id>
+      <started-marketing-on>1998-08-25</started-marketing-on>
+      <ended-marketing-on>2002-10-02</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline Bitartrate 100mg-tab</name>
+      <labeller>International Nutrition Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02144042</dpd-id>
+      <started-marketing-on>1996-07-26</started-marketing-on>
+      <ended-marketing-on>2001-08-17</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength>100 mg</strength>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>true</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline Bitartrate 500 Mg  -  Tablet</name>
+      <labeller>Health Wise Nutrition Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02155117</dpd-id>
+      <started-marketing-on>1997-08-15</started-marketing-on>
+      <ended-marketing-on>1998-08-25</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength>500 mg</strength>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>true</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline Caps 350mg</name>
+      <labeller>Twin Laboratories Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01984314</dpd-id>
+      <started-marketing-on>1995-12-31</started-marketing-on>
+      <ended-marketing-on>1999-11-10</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength>350 mg</strength>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>true</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline Ctr Srt 400mg</name>
+      <labeller>Bioenergy Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00540080</dpd-id>
+      <started-marketing-on>1979-12-31</started-marketing-on>
+      <ended-marketing-on>1998-06-03</ended-marketing-on>
+      <dosage-form>Tablet, extended release</dosage-form>
+      <strength>400 mg</strength>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>true</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline Tab 250mg</name>
+      <labeller>Gahler Enterprises Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00619140</dpd-id>
+      <started-marketing-on>1984-12-31</started-marketing-on>
+      <ended-marketing-on>2000-08-01</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength>250 mg</strength>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>true</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline Tab 250mg</name>
+      <labeller>Jamieson Laboratories Ltd</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00122742</dpd-id>
+      <started-marketing-on>1963-12-31</started-marketing-on>
+      <ended-marketing-on>2000-09-08</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength>250 mg</strength>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>true</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Choline Tab 250mg</name>
+      <labeller>Vita Health Products Inc</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00363987</dpd-id>
+      <started-marketing-on>1976-12-31</started-marketing-on>
+      <ended-marketing-on>1998-07-22</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength>250 mg</strength>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>true</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Cholinex Tab 200mg</name>
+      <labeller>Therapeutic Foods Co.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00472344</dpd-id>
+      <started-marketing-on>1992-12-31</started-marketing-on>
+      <ended-marketing-on>2004-07-22</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength>200 mg</strength>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>true</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Complete Mega B</name>
+      <labeller>Gahler Enterprises Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00624950</dpd-id>
+      <started-marketing-on>1985-12-31</started-marketing-on>
+      <ended-marketing-on>2001-07-26</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Complete Mega B</name>
+      <labeller>Wn Pharmaceuticals Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02242229</dpd-id>
+      <started-marketing-on>2001-01-02</started-marketing-on>
+      <ended-marketing-on>2005-08-15</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Complete Multivitamins and Minerals Tablets Timed Release</name>
+      <labeller>Pharmetics (2011) Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02237940</dpd-id>
+      <started-marketing-on>1999-07-26</started-marketing-on>
+      <ended-marketing-on>2009-07-30</ended-marketing-on>
+      <dosage-form>Tablet, extended release</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Complexe B Compose 75</name>
+      <labeller>Les Laboratoires Bio SantÉ Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00591947</dpd-id>
+      <started-marketing-on>1983-12-31</started-marketing-on>
+      <ended-marketing-on>1996-09-10</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Daily Energy Brand B-complex</name>
+      <labeller>Enzymatic Therapy, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02247363</dpd-id>
+      <started-marketing-on>2004-01-01</started-marketing-on>
+      <ended-marketing-on>2008-07-25</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>DayClear COUGH COLD AND FLU</name>
+      <labeller>Gm Pharmaceuticals</labeller>
+      <ndc-id/>
+      <ndc-product-code>58809-413</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2015-10-20</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part341</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>DayClear SINUS PAIN AND PRESSURE</name>
+      <labeller>Gm Pharmaceuticals</labeller>
+      <ndc-id/>
+      <ndc-product-code>58809-312</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2015-08-10</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part341</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Derma-force</name>
+      <labeller>Prairie Naturals</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02230387</dpd-id>
+      <started-marketing-on>1997-04-01</started-marketing-on>
+      <ended-marketing-on>2006-09-20</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Dp 2000</name>
+      <labeller>Pep Products Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02198886</dpd-id>
+      <started-marketing-on>1997-06-04</started-marketing-on>
+      <ended-marketing-on>2006-08-23</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Essential B Tablets</name>
+      <labeller>General Nutrition Canada Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02163373</dpd-id>
+      <started-marketing-on>1997-04-18</started-marketing-on>
+      <ended-marketing-on>2006-08-03</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Fem - Pmt</name>
+      <labeller>Metagenics, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02237127</dpd-id>
+      <started-marketing-on>1998-02-25</started-marketing-on>
+      <ended-marketing-on>2002-10-07</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>First Aid Shot Therapy Hangover Relief</name>
+      <labeller>First Aid Beverages, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code>57815-041</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2015-02-01</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Solution</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part343</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>First Aid Shot Therapy Pain relief</name>
+      <labeller>First Aid Beverages, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code>57815-011</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2013-09-05</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part343</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>First Aid Shot Therapy Pain Relief</name>
+      <labeller>First Aid Beverages, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code>57815-081</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2015-02-01</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part343</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Folic Acid Plus</name>
+      <labeller>Vita Health Products Inc</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02240874</dpd-id>
+      <started-marketing-on>2000-04-01</started-marketing-on>
+      <ended-marketing-on>2002-07-31</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Formula Cm</name>
+      <labeller>Nutrivention Nutritional Products</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02240384</dpd-id>
+      <started-marketing-on/>
+      <ended-marketing-on/>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Formula Lf</name>
+      <labeller>Numark Laboratories, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02241057</dpd-id>
+      <started-marketing-on>2003-12-15</started-marketing-on>
+      <ended-marketing-on>2009-07-31</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Forty Plus Vitamin Supplement</name>
+      <labeller>Garden State Nutritionals</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02238881</dpd-id>
+      <started-marketing-on>1998-10-16</started-marketing-on>
+      <ended-marketing-on>2000-06-07</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Fusion PM Formula Tab</name>
+      <labeller>L &amp; S Research Corporation</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01962434</dpd-id>
+      <started-marketing-on>1993-12-31</started-marketing-on>
+      <ended-marketing-on>1996-09-09</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Gabavale-5</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-054</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-05-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Gabazolamine</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-024</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Gabazolamine-0.5</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-034</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Gabazolpidem-5</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-044</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Gabitidine</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-004</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Gaboxetine</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-014</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Gesticare DHA</name>
+      <labeller>Jazz Pharmaceuticals Commercial Corp.</labeller>
+      <ndc-id/>
+      <ndc-product-code>18860-253</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2008-10-01</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Gnc Choline/inositol 250mg Tablets</name>
+      <labeller>General Nutrition Canada Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02166038</dpd-id>
+      <started-marketing-on>1997-04-18</started-marketing-on>
+      <ended-marketing-on>2005-08-05</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Harvest Of Values All B Complex Tab</name>
+      <labeller>Hillestad Pharmaceuticals Usa</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01938002</dpd-id>
+      <started-marketing-on>1997-09-24</started-marketing-on>
+      <ended-marketing-on>2009-09-22</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Hi Potency B Complex W Chelated Minerals</name>
+      <labeller>Klaire Labs Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00618136</dpd-id>
+      <started-marketing-on>1984-12-31</started-marketing-on>
+      <ended-marketing-on>2004-01-19</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Hi Potency B52 B Complex Tab</name>
+      <labeller>Country Health Laboratories Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00531286</dpd-id>
+      <started-marketing-on>1982-12-31</started-marketing-on>
+      <ended-marketing-on>2001-07-27</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Hi Potency Stress B Tension With C</name>
+      <labeller>Lee Adams Laboratories</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00542482</dpd-id>
+      <started-marketing-on>1982-12-31</started-marketing-on>
+      <ended-marketing-on>2010-08-05</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Insur-all Vitamin Supplement</name>
+      <labeller>Garden State Nutritionals</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02238882</dpd-id>
+      <started-marketing-on>1998-10-16</started-marketing-on>
+      <ended-marketing-on>2000-06-07</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Kroger Cough Cold and Flu</name>
+      <labeller>Kroger</labeller>
+      <ndc-id/>
+      <ndc-product-code>30142-771</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2016-04-07</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part341</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Kroger NiteTime Cold and Flu</name>
+      <labeller>Kroger</labeller>
+      <ndc-id/>
+      <ndc-product-code>30142-772</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2016-04-07</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part341</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Kroger Sinus Pain and Pressure</name>
+      <labeller>Kroger</labeller>
+      <ndc-id/>
+      <ndc-product-code>30142-774</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2016-04-07</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part341</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Lipo-B-C Tab</name>
+      <labeller>Metagenics, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00750719</dpd-id>
+      <started-marketing-on>1989-12-31</started-marketing-on>
+      <ended-marketing-on>1996-10-02</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Lipotropics 600 Tab</name>
+      <labeller>Gahler Enterprises Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00523461</dpd-id>
+      <started-marketing-on>1981-12-31</started-marketing-on>
+      <ended-marketing-on>2001-07-26</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Liqui B Complex</name>
+      <labeller>Twin Laboratories Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01984438</dpd-id>
+      <started-marketing-on>1995-12-31</started-marketing-on>
+      <ended-marketing-on>1999-11-10</ended-marketing-on>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Liqui B Complex Plus</name>
+      <labeller>Twin Laboratories Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01984411</dpd-id>
+      <started-marketing-on>1995-12-31</started-marketing-on>
+      <ended-marketing-on>1999-11-10</ended-marketing-on>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Liqui Vita</name>
+      <labeller>Twin Laboratories Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01984209</dpd-id>
+      <started-marketing-on>1995-12-31</started-marketing-on>
+      <ended-marketing-on>1999-11-10</ended-marketing-on>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Liquid B Complex 50</name>
+      <labeller>Jamieson Laboratories Ltd</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00623725</dpd-id>
+      <started-marketing-on>1985-12-31</started-marketing-on>
+      <ended-marketing-on>1997-08-13</ended-marketing-on>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Low Potency B Complex Tab</name>
+      <labeller>Flora Manufacturing And Distributing Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00601381</dpd-id>
+      <started-marketing-on>1983-12-31</started-marketing-on>
+      <ended-marketing-on>1999-10-18</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Mangadyn</name>
+      <labeller>Nutri Dyn Products Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00571849</dpd-id>
+      <started-marketing-on>1982-12-31</started-marketing-on>
+      <ended-marketing-on>1997-08-22</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Mega 13 Multivitamin Formula</name>
+      <labeller>Vita Health Products Inc</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00782173</dpd-id>
+      <started-marketing-on>1988-12-31</started-marketing-on>
+      <ended-marketing-on>1998-07-22</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Mini-B Tab</name>
+      <labeller>Twin Laboratories Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01983652</dpd-id>
+      <started-marketing-on>1995-12-31</started-marketing-on>
+      <ended-marketing-on>1999-11-10</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Multi B</name>
+      <labeller>Seroyal International Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00729094</dpd-id>
+      <started-marketing-on>1988-12-31</started-marketing-on>
+      <ended-marketing-on>2009-07-06</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Multi Vitamin-mineral Formula</name>
+      <labeller>Vita Health Products Inc</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00471305</dpd-id>
+      <started-marketing-on>1997-04-03</started-marketing-on>
+      <ended-marketing-on>1998-01-16</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Nata Komplete</name>
+      <labeller>Wh Nutritionals, Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>76331-909</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-06-25</started-marketing-on>
+      <ended-marketing-on>2016-12-06</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Onccor</name>
+      <labeller>Simone Protective Pharmaceuticals, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02230207</dpd-id>
+      <started-marketing-on/>
+      <ended-marketing-on/>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>One A Day Tab</name>
+      <labeller>Country Health Laboratories Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00553484</dpd-id>
+      <started-marketing-on>1982-12-31</started-marketing-on>
+      <ended-marketing-on>2001-07-27</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Orti B</name>
+      <labeller>Seroyal International Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00584401</dpd-id>
+      <started-marketing-on>1983-12-31</started-marketing-on>
+      <ended-marketing-on>2008-10-09</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Palm Spring's PM Form Tab</name>
+      <labeller>L &amp; S Research Corporation</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01968548</dpd-id>
+      <started-marketing-on>1993-12-31</started-marketing-on>
+      <ended-marketing-on>1996-09-09</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Phytopure</name>
+      <labeller>Laboratoire Lalco Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02028271</dpd-id>
+      <started-marketing-on>1993-12-31</started-marketing-on>
+      <ended-marketing-on>2001-10-15</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Pour Ma Santé</name>
+      <labeller>Prodemdis Enr.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02241398</dpd-id>
+      <started-marketing-on/>
+      <ended-marketing-on/>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Prenatal, DHA</name>
+      <labeller>Pure Tek Corporation</labeller>
+      <ndc-id/>
+      <ndc-product-code>59088-096</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2017-08-10</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Red American Eagle Vitamin Supplement Drink</name>
+      <labeller>P.S.W.C. Co., Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02231088</dpd-id>
+      <started-marketing-on/>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Senophylline</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-002</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Sentradine</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-033</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Sentraflox AM-10</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-022</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Sentralopram AM-10</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-012</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Sentravil PM-25</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-053</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Sentrazolam AM</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-032</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Sentrazolpidem PM-5</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-023</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-07-07</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Sentroxatine</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-043</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-02-17</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Spectrum 2 Cap</name>
+      <labeller>Nf Formulas Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00719064</dpd-id>
+      <started-marketing-on>1988-12-31</started-marketing-on>
+      <ended-marketing-on>2008-06-26</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Stom #2</name>
+      <labeller>Morinda Canada</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02239035</dpd-id>
+      <started-marketing-on>1999-12-20</started-marketing-on>
+      <ended-marketing-on>2001-07-23</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Strazepam</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-013</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-02-15</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Stress B &amp; C  Caplet</name>
+      <labeller>Health Wise Nutrition Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02011336</dpd-id>
+      <started-marketing-on>1995-12-31</started-marketing-on>
+      <ended-marketing-on>1998-08-25</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Stress B Capsules With Vitamin C</name>
+      <labeller>Rheingold Food International Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00694509</dpd-id>
+      <started-marketing-on>1987-12-31</started-marketing-on>
+      <ended-marketing-on>2007-07-26</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Stress B With 1000 Mg Vitamin C</name>
+      <labeller>Holista Health (Canada) Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02246252</dpd-id>
+      <started-marketing-on>2002-11-13</started-marketing-on>
+      <ended-marketing-on>2008-07-17</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Stress B&amp;c Tab</name>
+      <labeller>Bioforce Canada Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01978233</dpd-id>
+      <started-marketing-on>1985-12-31</started-marketing-on>
+      <ended-marketing-on>1997-04-04</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Stress Ctr Srt</name>
+      <labeller>Bioenergy Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00539937</dpd-id>
+      <started-marketing-on>1979-12-31</started-marketing-on>
+      <ended-marketing-on>1998-06-03</ended-marketing-on>
+      <dosage-form>Tablet, extended release</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Stress Formula B-comp + 500mg Vit C Tab</name>
+      <labeller>Quest Vitamins A Div Of Purity Life Health Products</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00718440</dpd-id>
+      <started-marketing-on>1987-12-31</started-marketing-on>
+      <ended-marketing-on>2002-07-29</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Stress Formula Multi-B Comp + 500mg Vit C Cap</name>
+      <labeller>Quest Vitamins A Div Of Purity Life Health Products</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00718475</dpd-id>
+      <started-marketing-on>1987-12-31</started-marketing-on>
+      <ended-marketing-on>2001-07-06</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Stress Formula Vit B With C Complex</name>
+      <labeller>Watkins Incorporated</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00629472</dpd-id>
+      <started-marketing-on>1985-12-31</started-marketing-on>
+      <ended-marketing-on>2000-01-15</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Stress Forte Plus Lipotropic Factors</name>
+      <labeller>Douglas Laboratories</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01990446</dpd-id>
+      <started-marketing-on>1995-12-31</started-marketing-on>
+      <ended-marketing-on>2009-09-29</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Stress Vitamin B With C Complex Tablets</name>
+      <labeller>Purity Life Health Products A Division Of Sunopta Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02245110</dpd-id>
+      <started-marketing-on>2002-06-01</started-marketing-on>
+      <ended-marketing-on>2007-07-26</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Stressmates</name>
+      <labeller>Twin Laboratories Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01983687</dpd-id>
+      <started-marketing-on>1995-12-31</started-marketing-on>
+      <ended-marketing-on>1999-11-10</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Super B Compound W 500mg Vit C</name>
+      <labeller>Gahler Enterprises Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00679186</dpd-id>
+      <started-marketing-on>1986-12-31</started-marketing-on>
+      <ended-marketing-on>2000-08-01</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Super Daily No 2</name>
+      <labeller>W.R. Enterprises Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00839043</dpd-id>
+      <started-marketing-on>1990-12-31</started-marketing-on>
+      <ended-marketing-on>2003-07-30</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Super Stress Capsules</name>
+      <labeller>Rheingold Food International Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00644722</dpd-id>
+      <started-marketing-on>1987-12-31</started-marketing-on>
+      <ended-marketing-on>1997-08-22</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Super Stress Mega B Plus 1000mg Vit C Tab</name>
+      <labeller>Quest Vitamins A Div Of Purity Life Health Products</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00718459</dpd-id>
+      <started-marketing-on>1987-12-31</started-marketing-on>
+      <ended-marketing-on>2001-07-06</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Super-pote Vitamin Supplement</name>
+      <labeller>Garden State Nutritionals</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02238783</dpd-id>
+      <started-marketing-on>1998-09-25</started-marketing-on>
+      <ended-marketing-on>2000-06-07</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Teejel Gel</name>
+      <labeller>Purdue Pharma</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00026190</dpd-id>
+      <started-marketing-on>1965-12-31</started-marketing-on>
+      <ended-marketing-on>2002-07-30</ended-marketing-on>
+      <dosage-form>Gel</dosage-form>
+      <strength/>
+      <route>Dental; Topical</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Texaclear Congestion and Pain Sinus Relief</name>
+      <labeller>Gm Pharmaceuticals</labeller>
+      <ndc-id/>
+      <ndc-product-code>58809-346</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2014-10-21</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part341</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Texaclear Daytime Cough Cold/flu</name>
+      <labeller>Gm Pharmaceuticals</labeller>
+      <ndc-id/>
+      <ndc-product-code>58809-391</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2014-10-21</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part341</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Texaclear Night Time Cough Cold/flu</name>
+      <labeller>Gm Pharmaceuticals</labeller>
+      <ndc-id/>
+      <ndc-product-code>58809-372</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2014-10-23</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part341</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Time Release B 100 Compound  -  Tablet</name>
+      <labeller>Health Wise Nutrition Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02168111</dpd-id>
+      <started-marketing-on>1996-10-22</started-marketing-on>
+      <ended-marketing-on>2002-07-18</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Timed Release B Complex 100 Srt</name>
+      <labeller>Jamieson Laboratories Ltd</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02021684</dpd-id>
+      <started-marketing-on>1994-12-31</started-marketing-on>
+      <ended-marketing-on>1997-08-13</ended-marketing-on>
+      <dosage-form>Tablet, extended release</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Timed Release B-complex 100</name>
+      <labeller>Great Earth Companies, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02230974</dpd-id>
+      <started-marketing-on>1998-08-25</started-marketing-on>
+      <ended-marketing-on>2002-10-02</ended-marketing-on>
+      <dosage-form>Tablet, extended release</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Timed Release B-complex 50</name>
+      <labeller>Great Earth Companies, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02230972</dpd-id>
+      <started-marketing-on>1998-08-25</started-marketing-on>
+      <ended-marketing-on>2002-10-02</ended-marketing-on>
+      <dosage-form>Tablet, extended release</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Trazamine</name>
+      <labeller>Physician Therapeutics Llc</labeller>
+      <ndc-id/>
+      <ndc-product-code>68405-003</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2011-02-03</started-marketing-on>
+      <ended-marketing-on>2016-10-13</ended-marketing-on>
+      <dosage-form>Kit</dosage-form>
+      <strength/>
+      <route/>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>false</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Trilisate Tab</name>
+      <labeller>Purdue Pharma</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00449636</dpd-id>
+      <started-marketing-on>1979-12-31</started-marketing-on>
+      <ended-marketing-on>2002-07-30</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Ultra Hr</name>
+      <labeller>Natural Organics Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02238044</dpd-id>
+      <started-marketing-on/>
+      <ended-marketing-on/>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Usana Megavitamin Tablets - Tab</name>
+      <labeller>Usana Health Sciences, Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02226316</dpd-id>
+      <started-marketing-on>1996-12-30</started-marketing-on>
+      <ended-marketing-on>2000-09-11</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vanapain</name>
+      <labeller>Gm Pharmaceuticals</labeller>
+      <ndc-id/>
+      <ndc-product-code>58809-123</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2013-07-22</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part343</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Vanapain PM</name>
+      <labeller>Gm Pharmaceuticals</labeller>
+      <ndc-id/>
+      <ndc-product-code>58809-444</ndc-product-code>
+      <dpd-id/>
+      <started-marketing-on>2013-10-28</started-marketing-on>
+      <ended-marketing-on/>
+      <dosage-form>Liquid</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number>part343</fda-application-number>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>US</country>
+      <source>FDA NDC</source>
+    </product>
+    <product>
+      <name>Vit B Complex Ctr</name>
+      <labeller>Bioenergy Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00539929</dpd-id>
+      <started-marketing-on>1979-12-31</started-marketing-on>
+      <ended-marketing-on>1998-06-03</ended-marketing-on>
+      <dosage-form>Tablet, extended release</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vit-HA Multi Vitamin and Zinc Supplement</name>
+      <labeller>Rheingold Food International Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>01987267</dpd-id>
+      <started-marketing-on>1994-12-31</started-marketing-on>
+      <ended-marketing-on>2007-07-26</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vita B Complex Tab</name>
+      <labeller>Nutrimetics International (Canada) Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00634697</dpd-id>
+      <started-marketing-on>1985-12-31</started-marketing-on>
+      <ended-marketing-on>2000-07-19</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vita-B</name>
+      <labeller>Nutri Dyn Products Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00609668</dpd-id>
+      <started-marketing-on>1984-12-31</started-marketing-on>
+      <ended-marketing-on>1997-08-22</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vita-worth B-complex Tablets</name>
+      <labeller>General Nutrition Canada Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02163381</dpd-id>
+      <started-marketing-on>1997-04-18</started-marketing-on>
+      <ended-marketing-on>2005-08-05</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vitalife  -  Capsule</name>
+      <labeller>Holista Health (Canada) Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02157942</dpd-id>
+      <started-marketing-on>1996-11-13</started-marketing-on>
+      <ended-marketing-on>2002-08-06</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vitamin B + C Cap</name>
+      <labeller>Finlandia Consultants</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00833371</dpd-id>
+      <started-marketing-on>1990-12-31</started-marketing-on>
+      <ended-marketing-on>1997-12-02</ended-marketing-on>
+      <dosage-form>Capsule</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vitamin B Complex 100 Tab</name>
+      <labeller>Bioforce Canada Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02075970</dpd-id>
+      <started-marketing-on>1994-12-31</started-marketing-on>
+      <ended-marketing-on>1997-04-04</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vitamin B Complex 50</name>
+      <labeller>Gfr Pharma Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02246190</dpd-id>
+      <started-marketing-on>2002-10-10</started-marketing-on>
+      <ended-marketing-on>2004-06-15</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vitamin B Complex Suppl</name>
+      <labeller>Avacare, Division Of Jeunique International Inc.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00624462</dpd-id>
+      <started-marketing-on>1985-12-31</started-marketing-on>
+      <ended-marketing-on>2006-07-20</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vitamin B Complex W C Tab</name>
+      <labeller>Albi Imports Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00483087</dpd-id>
+      <started-marketing-on>1979-12-31</started-marketing-on>
+      <ended-marketing-on>2004-09-24</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vitamin B Compound W C Tab 500mg</name>
+      <labeller>Adams Laboratories</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00469785</dpd-id>
+      <started-marketing-on>1979-12-31</started-marketing-on>
+      <ended-marketing-on>2009-10-21</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vitamin B Compound W Vit C 250mg Tab</name>
+      <labeller>Swiss Herbal Remedies Ltd.</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00520705</dpd-id>
+      <started-marketing-on>1972-12-31</started-marketing-on>
+      <ended-marketing-on>2003-09-10</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Vitamin B Tablets</name>
+      <labeller>Weider Health Products</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>00649422</dpd-id>
+      <started-marketing-on>1985-12-31</started-marketing-on>
+      <ended-marketing-on>1999-09-09</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+    <product>
+      <name>Women's Formula</name>
+      <labeller>Pro Ma Systems</labeller>
+      <ndc-id/>
+      <ndc-product-code/>
+      <dpd-id>02232894</dpd-id>
+      <started-marketing-on>1998-10-31</started-marketing-on>
+      <ended-marketing-on>2007-09-25</ended-marketing-on>
+      <dosage-form>Tablet</dosage-form>
+      <strength/>
+      <route>Oral</route>
+      <fda-application-number/>
+      <generic>false</generic>
+      <over-the-counter>false</over-the-counter>
+      <approved>true</approved>
+      <country>Canada</country>
+      <source>DPD</source>
+    </product>
+  <!--atc-codes>
+    <atc-code code="N02BA03">
+      <level code="N02BA">Salicylic acid and derivatives</level>
+      <level code="N02B">OTHER ANALGESICS AND ANTIPYRETICS</level>
+      <level code="N02">ANALGESICS</level>
+      <level code="N">NERVOUS SYSTEM</level>
+    </atc-code>
+  </atc-codes-->
+</root>
+
