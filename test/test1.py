@@ -47,7 +47,7 @@ myframe = DataFrame(totallist, columns=mycolumn)
 import sqlite3
 import pandas as pd
 
-conn = sqlite3.connect('drug2.db')
+conn = sqlite3.connect('drug.db')
 
 # cursor(커서) : 실제 db에 접속해서 무엇인가를 요청하는 객체
 mycursor = conn.cursor()

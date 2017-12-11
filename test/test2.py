@@ -1,11 +1,12 @@
 '''
-Created on 2017. 12.08
+Created on 2017. 12. 08
 
 @author: hsw
 '''
 
 from xml.etree.ElementTree import parse
 from pandas import DataFrame
+
 
 tree = parse('drug_201610.xml')
 myroot = tree.getroot() # 최상위 엘리먼트 취득
@@ -45,53 +46,50 @@ myframe = DataFrame(totallist, columns=mycolumn)
 # print( '작업 완료' )
 
 # sqlite3를 사용하기 위하여 임포트
-import sqlite3
+#import sqlite3
+import cx_Oracle as oracle
 import pandas as pd
 
-conn = sqlite3.connect('drug.db')
+conn = oracle.connect('scott/tiger@localhost:1521/xe')
 
 # cursor(커서) : 실제 db에 접속해서 무엇인가를 요청하는 객체
 mycursor = conn.cursor()
 
-try:
-    mycursor.execute("drop table drugkorea")
-except sqlite3.OperationalError:
-    print('테이블이 존재하지 않습니다.')
+#try:
+#    mycursor.execute("drop table drugkorea")
+#except oracle.OperationalError:
+#    print('테이블이 존재하지 않습니다.')
 
-mycursor.execute('''CREATE TABLE drugkorea
-             (name text primary key, stdcode text, productname text, productstdcode text, returncompany text, returnday text, productnum text)''')
+#mycursor.execute('''CREATE TABLE drugkorea
+#             (name varchar2(80), stdcode varchar2(80), 
+#             product_name varchar2(80), product_stdcode varchar2(80), 
+#             return_company varchar2(80), return_date varchar2(80), 
+#             product_num varchar2(80), product_date varchar2(80),
+#             unit varchar2(80), reason varchar2(500), danger_grade varchar2(80), reg_date varchar2(80))''')
 
 
 for onedata in range(len(myframe)):
     imsi = myframe.ix[onedata]
     name = imsi['제품명']
     stdcode = imsi['표준코드']
-    productname = imsi['품목명']
-    productstdcode = imsi['품목기준코드']
-    returncompany = imsi['회수의무자']
-    returnday = imsi['회수일자']
-    productnum = imsi['제조번호']
+    product_name = imsi['품목명']
+    product_stdcode = imsi['품목기준코드']
+    return_company = imsi['회수의무자']
+    return_date = imsi['회수일자']
+    product_num = imsi['제조번호']
+    product_date = imsi['제조일자']
+    unit = imsi['포장단위']
+    reason = imsi['회수사유']
+    danger_grade = imsi['위험등급']
+    reg_date = imsi['등록일자']
     
-    sql = "insert into drugkorea values('" + name + "', '" +  stdcode + "', '" + productname + "', '" + productstdcode + "', '" + returncompany + "','" + returnday + " ', ' " + productnum + " ')"
-    # print( sql )
+    sql = "insert into drugkorea values('" + name + "', '" +  stdcode + "', '" + product_name + "', '" + product_stdcode + "', '" + return_company + "','" + return_date + "', '" + product_num + "', '" + product_date + "', '" + unit + "', '" + reason + "', '" + danger_grade + "', '" + reg_date + "')"
+    
+    print( sql )
     mycursor.execute( sql )
 
 conn.commit()
 
-# finddata = '신세계'
-# sql = "select * from inchon where name like '%" + finddata + "%'"
-# print('업소명에 [' + finddata + ']라는 글자가 포함된 가게')
-# for row in mycursor.execute( sql ):
-#     # print (type(row)) # <class 'tuple'>
-#     print (row)
-# print()
-
-# finddata = '백숙'
-# sql = "select * from inchon where maindish like '%" + finddata + "%'"
-# print('이름에 [' + finddata + ']라는 글자가 포함된 가게')
-# for row in mycursor.execute( sql ):
-#     print (row)
-# print()
 
 sql = "select * from drugkorea order by name asc"
 print('약 이름순으로 정렬합니다.')
@@ -101,4 +99,4 @@ print()
 
 conn.close()
 print()
-print('작업 완료^^')
+print('작업 완료')
