@@ -97,6 +97,7 @@ for row in mycursor.execute( sql ):
     print (row)
 print()
 
+mycursor.close()
 conn.close()
 print()
 print('작업 완료')

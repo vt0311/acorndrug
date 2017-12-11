@@ -3,7 +3,7 @@ Created on 2017. 12.08
 
 @author: hsw
 
-Drug Bank test 
+Drug Bank Insert Test 
 '''
 
 from xml.etree.ElementTree import parse

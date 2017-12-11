@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- <drugbank xmlns="http://www.drugbank.ca" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.drugbank.ca http://www.drugbank.ca/docs/drugbank.xsd" version="5.0" exported-on="2017-10-02"> -->
 <!--drug type="small molecule" created="2005-06-13" updated="2017-09-01"-->
-  <!--name>Choline</name-->
+  <name>Choline</name>
 <root>
     <header>
     	<header>name</header>
@@ -2811,13 +2811,13 @@
       <country>Canada</country>
       <source>DPD</source>
     </product>
-  <!--atc-codes>
+  <atc-codes>
     <atc-code code="N02BA03">
       <level code="N02BA">Salicylic acid and derivatives</level>
       <level code="N02B">OTHER ANALGESICS AND ANTIPYRETICS</level>
       <level code="N02">ANALGESICS</level>
       <level code="N">NERVOUS SYSTEM</level>
     </atc-code>
-  </atc-codes-->
+  </atc-codes>
 </root>
 
