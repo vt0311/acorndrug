@@ -9,7 +9,7 @@ from glob import glob
 ################
 ### Overview ###
 ################
-base_bone_dir = 'C:/BoneAge/'
+base_bone_dir = 'D:/BoneAge/'
 print(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
 
 age_df = pd.read_csv(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
