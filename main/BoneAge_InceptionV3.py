@@ -132,6 +132,7 @@ print(t_y.shape)
 ###########################
 ###Create a Simple Model###
 ###########################
+#from keras.applications.inception_v3 import InceptionV3
 from keras.applications.inception_v3 import InceptionV3
 from keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten
 from keras.models import Sequential
