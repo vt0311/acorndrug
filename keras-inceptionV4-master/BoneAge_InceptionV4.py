@@ -132,20 +132,20 @@ print(t_y.shape)
 ###########################
 ###Create a Simple Model###
 ###########################
-from keras.applications.inception_v3 import InceptionV3
-#from inception_v4 import inception_v4
+#from keras.applications.inception_v3 import InceptionV3
+from inception_v4 import inception_v4
 from keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten
 from keras.models import Sequential
 
-base_iv3_model = InceptionV3(input_shape =  t_x.shape[1:],
-                              include_top = False, 
-                              weights = 'imagenet')
-'''
+#base_iv3_model = InceptionV3(input_shape =  t_x.shape[1:],
+#                              include_top = False, 
+#                              weights = 'imagenet')
+
 base_iv3_model = inception_v4(num_classes =  1000,
                               dropout_keep_prob = 0,
                               weights = 'imagenet',
                               include_top = False)
-'''
+
 # include_top : whether to include the fully-connected layer at the top of the network.
 # weights : one of None (random initialization) or 'imagenet' (pre-training on ImageNet).
 base_iv3_model.trainable = False
