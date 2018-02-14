@@ -65,7 +65,7 @@ print('New Data Size:', train_df.shape[0], 'Old Size:', raw_train_df.shape[0])
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications.imagenet_utils import preprocess_input
 
-IMG_SIZE = (224, 224) # default size for inception_v3
+IMG_SIZE = (299, 299) # default size for inception_v3
 core_idg = ImageDataGenerator(
     samplewise_center=False, # Set each sample mean to 0
     samplewise_std_normalization=False, # Divide each input by its std
@@ -134,6 +134,7 @@ print(t_y.shape)
 ###########################
 #from keras.applications.inception_v3 import InceptionV3
 from inception_v4 import inception_v4
+from inception_v5 import create_inception_v4
 from keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten
 from keras.models import Sequential
 
@@ -141,10 +142,14 @@ from keras.models import Sequential
 #                              include_top = False, 
 #                              weights = 'imagenet')
 
-base_iv3_model = inception_v4(num_classes =  1000,
-                              dropout_keep_prob = 0,
-                              weights = 'imagenet',
-                              include_top = False)
+#base_iv3_model = inception_v4(num_classes =  1001,
+#                              dropout_keep_prob = 0,
+#                              weights = 'imagenet',
+#                              include_top = False)
+                              
+
+base_iv3_model = create_inception_v4(nb_classes=1001, load_weights=True
+                              )
 
 # include_top : whether to include the fully-connected layer at the top of the network.
 # weights : one of None (random initialization) or 'imagenet' (pre-training on ImageNet).
@@ -154,7 +159,7 @@ base_iv3_model.trainable = False
 bone_age_model = Sequential()
 
 bone_age_model.add(base_iv3_model)
-bone_age_model.add(GlobalAveragePooling2D())
+#bone_age_model.add(GlobalAveragePooling2D())
 bone_age_model.add(Dropout(0.5))
 bone_age_model.add(Dense(1024, activation = 'tanh'))
 bone_age_model.add(Dropout(0.25))
