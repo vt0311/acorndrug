@@ -9,7 +9,7 @@ from glob import glob
 ################
 ### Overview ###
 ################
-base_bone_dir = 'D:/BoneAge/'
+base_bone_dir = 'C:/BoneAge/'
 print(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
 
 age_df = pd.read_csv(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
@@ -26,8 +26,8 @@ age_df['gender'] = age_df['male'].map(lambda x: 'male' if x else 'female')
 boneage_mean = age_df['boneage'].mean()
 boneage_div = 2*age_df['boneage'].std()
 # we don't want normalization for now
-boneage_mean = 0
-boneage_div = 1.0
+#boneage_mean = 0
+#boneage_div = 1.0
 age_df['boneage_zscore'] = age_df['boneage'].map(lambda x: (x-boneage_mean)/boneage_div)
 age_df.dropna(inplace = True)
 age_df.sample(3)
@@ -65,7 +65,8 @@ print('New Data Size:', train_df.shape[0], 'Old Size:', raw_train_df.shape[0])
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications.imagenet_utils import preprocess_input
 
-IMG_SIZE = (224, 224) # default size for inception_v3
+#IMG_SIZE = (224, 224) # default size for inception_v3
+IMG_SIZE = (299, 299)
 core_idg = ImageDataGenerator(
     samplewise_center=False, # Set each sample mean to 0
     samplewise_std_normalization=False, # Divide each input by its std
