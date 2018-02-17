@@ -9,7 +9,8 @@ from glob import glob
 ################
 ### Overview ###
 ################
-base_bone_dir = 'D:/BoneAge/'
+base_bone_dir = 'C:/BoneAge/'
+#base_bone_dir = 'D:/BoneAge/'
 print(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
 
 age_df = pd.read_csv(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
@@ -134,7 +135,7 @@ print(t_y.shape)
 ###########################
 #from keras.applications.inception_v3 import InceptionV3
 #from inception_v4 import inception_v4
-from inception_v4_2 import create_inception_v4boneage_mean
+from inception_v4_2 import create_inception_v4
 from keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten
 from keras.models import Sequential
 
