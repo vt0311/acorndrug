@@ -9,7 +9,7 @@ from glob import glob
 ################
 ### Overview ###
 ################
-base_bone_dir = 'D:/BoneAge/'
+base_bone_dir = 'C:/BoneAge/'
 print(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
 
 age_df = pd.read_csv(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
@@ -224,14 +224,14 @@ callbacks_list = [checkpoint, early, reduceLROnPlat]
 ####################
 bone_age_model.fit_generator(
     train_gen, 
-    steps_per_epoch=300, # Total number of steps (batches of samples) to yield from generator
+    steps_per_epoch=30, # Total number of steps (batches of samples) to yield from generator
                          # It should typically be equal to the number of samples 
                          # of your dataset divided by the batch size
     validation_data = (test_X, test_Y), # This can be either
                                         # A generator for the validation data
                                         # A tuple (inputs, targets)
                                         # A tuple (inputs, targets, sample_weights)
-    epochs = 4, #  total number of iterations on the data
+    epochs = 2, #  total number of iterations on the data
     callbacks = callbacks_list ) # List of callbacks to be called during training.
 
 ##########################

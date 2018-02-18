@@ -137,7 +137,7 @@ print(t_y.shape)
 ###########################
 import keras
 from keras.applications.inception_v3 import InceptionV3
-#from inception_v4 import inception_v4
+
 from keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten
 from keras.models import Sequential
 from IPython.display import clear_output
@@ -197,8 +197,37 @@ bone_age_model.compile(optimizer = 'adam', loss = 'mse', metrics = [mae_months])
 ###Model Save###
 ################
 from keras.callbacks import ModelCheckpoint, LearningRateScheduler, EarlyStopping, ReduceLROnPlateau
-weight_path="{}_weights.best.hdf5".format('bone_age_v3')
+weight_path="{}_weights.best.hdf5".format('bone_age')
 
+
+# updatable plot
+# a minimal example (sort of)
+class PlotLosses(keras.callbacks.Callback):
+    def on_train_begin(self, logs={}):
+        self.i = 0
+        self.x = []
+        self.losses = []
+        self.val_losses = []
+        
+        self.fig = plt.figure()
+        
+        self.logs = []
+
+    def on_epoch_end(self, epoch, logs={}):
+        
+        self.logs.append(logs)
+        self.x.append(self.i)
+        self.losses.append(logs.get('loss'))
+        self.val_losses.append(logs.get('val_loss'))
+        self.i += 1
+        
+        clear_output(wait=True)
+        plt.plot(self.x, self.losses, label="loss")
+        plt.plot(self.x, self.val_losses, label="val_loss")
+        plt.legend()
+        plt.show();
+        
+        
 checkpoint = ModelCheckpoint(
                 weight_path, # filepath : string, path to save the model file
                 monitor='val_loss', # monitor : quantity to monitor
@@ -228,43 +257,20 @@ early = EarlyStopping(monitor="val_loss",
                       mode="min", 
                       patience=5) # probably needs to be more patient, but kaggle time is limited
 
-# updatable plot
-# a minimal example (sort of)
-class PlotLosses(keras.callbacks.Callback):
-    def on_train_begin(self, logs={}):
-        self.i = 0
-        self.x = []
-        self.losses = []
-        self.val_losses = []
-        
-        self.fig = plt.figure()
-        
-        self.logs = []
+#plot_losses = PlotLosses()
 
-    def on_epoch_end(self, epoch, logs={}):
-        
-        self.logs.append(logs)
-        self.x.append(self.i)
-        self.losses.append(logs.get('loss'))
-        self.val_losses.append(logs.get('val_loss'))
-        self.i += 1
-        
-        clear_output(wait=True)
-        plt.plot(self.x, self.losses, label="loss")
-        plt.plot(self.x, self.val_losses, label="val_loss")
-        plt.legend()
-        plt.show();
-        
-plot_losses = PlotLosses()
 
-callbacks_list = [checkpoint, early, reduceLROnPlat, plot_losses]
+        
+
+
+callbacks_list = [checkpoint, early, reduceLROnPlat]
 
 ####################
 ###Model Training###
 ####################
 bone_age_model.fit_generator(
     train_gen, 
-    steps_per_epoch=10, # Total number of steps (batches of samples) to yield from generator
+    steps_per_epoch=100, # Total number of steps (batches of samples) to yield from generator
                          # 생성기에서 얻는 총 단계 수 (샘플 배치)입니다.
                          # It should typically be equal to the number of samples 
                          # of your dataset divided by the batch size
@@ -277,6 +283,8 @@ bone_age_model.fit_generator(
     callbacks = callbacks_list # List of callbacks to be called during training.
     #callbacks=[plot_losses]
     ) 
+
+#PlotLosses()
 
 ##########################
 ###Evaluate the Results###
