@@ -200,6 +200,45 @@ from keras.callbacks import ModelCheckpoint, LearningRateScheduler, EarlyStoppin
 weight_path="{}_weights.best.hdf5".format('bone_age')
 
 
+class PlotLearning(Callback):
+    def on_train_begin(self, logs={}):
+        self.i = 0
+        self.x = []
+        self.losses = []
+        self.val_losses = []
+        self.acc = []
+        self.val_acc = []
+        self.fig = plt.figure()
+        
+        self.logs = []
+
+    def on_epoch_end(self, epoch, logs={}):
+        
+        self.logs.append(logs)
+        self.x.append(self.i)
+        self.losses.append(logs.get('loss'))
+        self.val_losses.append(logs.get('val_loss'))
+        self.acc.append(logs.get('acc'))
+        self.val_acc.append(logs.get('val_acc'))
+        self.i += 1
+        f, (ax1, ax2) = plt.subplots(1, 2, sharex=True)
+        
+        clear_output(wait=True)
+        
+        ax1.set_yscale('log')
+        ax1.plot(self.x, self.losses, label="loss")
+        ax1.plot(self.x, self.val_losses, label="val_loss")
+        ax1.legend()
+        
+        ax2.plot(self.x, self.acc, label="accuracy")
+        ax2.plot(self.x, self.val_acc, label="validation accuracy")
+        ax2.legend()
+        
+        plt.show();
+        
+#plot = PlotLearning()
+
+
 # updatable plot
 # a minimal example (sort of)
 class PlotLosses(keras.callbacks.Callback):
@@ -257,20 +296,21 @@ early = EarlyStopping(monitor="val_loss",
                       mode="min", 
                       patience=5) # probably needs to be more patient, but kaggle time is limited
 
-#plot_losses = PlotLosses()
+plot_losses = PlotLosses()
+#plot_losses = PlotLearning()
 
 
         
 
 
-callbacks_list = [checkpoint, early, reduceLROnPlat]
+callbacks_list = [checkpoint, early, reduceLROnPlat, plot_losses]
 
 ####################
 ###Model Training###
 ####################
 bone_age_model.fit_generator(
     train_gen, 
-    steps_per_epoch=100, # Total number of steps (batches of samples) to yield from generator
+    steps_per_epoch=300, # Total number of steps (batches of samples) to yield from generator
                          # 생성기에서 얻는 총 단계 수 (샘플 배치)입니다.
                          # It should typically be equal to the number of samples 
                          # of your dataset divided by the batch size
@@ -279,9 +319,8 @@ bone_age_model.fit_generator(
                                         # A generator for the validation data
                                         # A tuple (inputs, targets)
                                         # A tuple (inputs, targets, sample_weights)
-    epochs = 2, #  total number of iterations on the data # 데이터의 총 반복 횟수
+    epochs = 4, #  total number of iterations on the data # 데이터의 총 반복 횟수
     callbacks = callbacks_list # List of callbacks to be called during training.
-    #callbacks=[plot_losses]
     ) 
 
 #PlotLosses()
