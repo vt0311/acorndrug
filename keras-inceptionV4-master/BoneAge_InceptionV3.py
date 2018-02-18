@@ -140,6 +140,7 @@ from keras.applications.inception_v3 import InceptionV3
 #from inception_v4 import inception_v4
 from keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten
 from keras.models import Sequential
+from IPython.display import clear_output
 
 base_iv3_model = InceptionV3(input_shape =  t_x.shape[1:],
                               include_top = False, 
@@ -263,7 +264,7 @@ callbacks_list = [checkpoint, early, reduceLROnPlat, plot_losses]
 ####################
 bone_age_model.fit_generator(
     train_gen, 
-    steps_per_epoch=40, # Total number of steps (batches of samples) to yield from generator
+    steps_per_epoch=10, # Total number of steps (batches of samples) to yield from generator
                          # 생성기에서 얻는 총 단계 수 (샘플 배치)입니다.
                          # It should typically be equal to the number of samples 
                          # of your dataset divided by the batch size
