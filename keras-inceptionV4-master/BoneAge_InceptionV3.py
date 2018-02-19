@@ -309,7 +309,7 @@ callbacks_list = [checkpoint, early, reduceLROnPlat]
 bone_age_model.fit_generator(
 #history = bone_age_model.fit_generator(
     train_gen, 
-    steps_per_epoch=50, # Total number of steps (batches of samples) to yield from generator
+    steps_per_epoch=10, # Total number of steps (batches of samples) to yield from generator
                          # 생성기에서 얻는 총 단계 수 (샘플 배치)입니다.
                          # It should typically be equal to the number of samples 
                          # of your dataset divided by the batch size
@@ -330,6 +330,7 @@ pred_Y = boneage_div*bone_age_model.predict(test_X, batch_size = 32, verbose = T
 test_Y_months = boneage_div*test_Y+boneage_mean
 # Finally, we trained the final model with a minibatch size of 16 for 500 epochs (approximately 50 hours) with the ADAM optimizer attempting to minimize mean absolute error of the output. We reduced the learning rate when the validation loss plateaued.                       
 # 마지막으로 ADAM 최적화 프로그램이 출력의 평균 절대 오류를 최소화하려고 시도하면서 500 에포크 (약 50 시간) 동안 미니 배치 크기 16으로 최종 모델을 교육했습니다. 검증 손실이 극대화되면 학습률이 감소합니다.
+
 '''
 # summarize history for mae_month
 plt.plot(history.history['mae_month'])
@@ -339,6 +340,7 @@ plt.ylabel('mae_month')
 plt.xlabel('epoch')
 plt.legend(['train_gen', 'validation_data'], loc='upper left')
 plt.show()
+
 # summarize history for loss
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
@@ -358,25 +360,29 @@ plt.show()
 #plt.legend(loc='lower right')
 #plt.show()   
 
-
+'''
+import tensorflow as tf
+# Create graph session 
+sess = tf.Session()
 #############################################################################
-# 반복 학습 영역
+# 반복 영역
 #############################################################################
 loss_vec = []
 test_loss = []
-for i in range(200):
-    rand_index = np.random.choice(len(x_train), size=batch_size)
-    rand_x = x_train[rand_index]
-    rand_y = np.transpose([y_train[rand_index]])
-    sess.run(train, feed_dict={x: rand_x, y: rand_y})
+batch_size = 10
+for i in range(4):
+    rand_index = np.random.choice(len(t_x), size=batch_size)
+    rand_x = t_x[rand_index]
+    rand_y = np.transpose([t_y[rand_index]])
+    sess.run(train_gen, feed_dict={x: rand_x, y: rand_y})
  
-    temp_loss = sess.run(cost, feed_dict={x: rand_x, y: rand_y})
+    temp_loss = sess.run(loss, feed_dict={x: rand_x, y: rand_y})
     loss_vec.append(temp_loss)
      
-    test_temp_loss = sess.run(cost, feed_dict={x: x_test, y: np.transpose([y_test])})
+    test_temp_loss = sess.run(loss, feed_dict={x: test_X, y: np.transpose([test_Y])})
     test_loss.append(test_temp_loss)
-    if (i+1) % 25 == 0:
-        print('Generation: ' + str(i+1) + '. Loss = ' + str(temp_loss))
+    #if (i+1) % 25 == 0:
+    #    print('Generation: ' + str(i+1) + '. Loss = ' + str(temp_loss))
 #############################################################################
 # 차트 그리기
 #############################################################################
@@ -387,4 +393,5 @@ plt.title('Loss (MSE) per Generation')
 plt.legend(loc='upper right')
 plt.xlabel('Generation')
 plt.ylabel('Loss')
-plt.show()       
+plt.show()    
+'''   
