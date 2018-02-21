@@ -1,16 +1,20 @@
+'''
+Created on 2018. 2. 21.
+
+@author: acorn
+'''
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import matplotlib.pyplot as plt # showing and rendering figures
 # io related
-from skimage.io import imread
+# from skimage.io import imread
 import os
 from glob import glob
 
-        
 ################
 ### Overview ###
 ################
-base_bone_dir = 'D:/BoneAge/'
+base_bone_dir = 'C:/work/bone/'
 print(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
 
 age_df = pd.read_csv(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
@@ -24,10 +28,10 @@ print(age_df)
 print(age_df['exists'].sum(), 'images found of', age_df.shape[0], 'total')
 age_df['gender'] = age_df['male'].map(lambda x: 'male' if x else 'female')
 
-boneage_mean = age_df['boneage'].mean()
+boneage_mean = age_df['boneage'].mean() #정규화 (평균 표준편차)
 boneage_div = 2*age_df['boneage'].std()
 # we don't want normalization for now
-boneage_mean = 0
+boneage_mean = 0 #정규화안하고 함 
 boneage_div = 1.0
 age_df['boneage_zscore'] = age_df['boneage'].map(lambda x: (x-boneage_mean)/boneage_div)
 age_df.dropna(inplace = True)
@@ -50,7 +54,7 @@ raw_train_df, valid_df = train_test_split(age_df, test_size = 0.25,
 # stratify (계층화하다) : data is split in a stratified fashion, using this as the class labels.
 
 print('train', raw_train_df.shape[0], 'validation', valid_df.shape[0])
-#age_df[['boneage', 'male']].hist(figsize = (10, 5))
+age_df[['boneage', 'male']].hist(figsize = (10, 5))
 
 ### Balance the distribution in the training set ###
 train_df = raw_train_df.groupby(['boneage_category', 'male'])
@@ -66,10 +70,7 @@ print('New Data Size:', train_df.shape[0], 'Old Size:', raw_train_df.shape[0])
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications.imagenet_utils import preprocess_input
 
-#IMG_SIZE = (224, 224) # default size for inception_v3
-#IMG_SIZE = (299, 299)
-IMG_SIZE = (256, 256) # 02.21 회의
-#IMG_SIZE = (500, 500) # 02.21 회의(GPU)
+IMG_SIZE = (256, 256) # default size for inception_v3
 core_idg = ImageDataGenerator(
     samplewise_center=False, # Set each sample mean to 0
     samplewise_std_normalization=False, # Divide each input by its std
@@ -77,10 +78,7 @@ core_idg = ImageDataGenerator(
     vertical_flip = False, # Randomly flip inputs vertically
     height_shift_range = 0.2, # Range for random horizontal shifts
     width_shift_range = 0.2, # Range for random vertical shifts
-    #height_shift_range = 0.15
-    #height_shift_range = 0.15
     rotation_range = 20, # Degree range for random rotations
-    #rotation_range = 5
     shear_range = 0.01, # Shear(깍다) angle in counter-clockwise direction as radians 
     fill_mode = 'reflect',
     # One of {"constant", "nearest", "reflect" or "wrap"}. 
@@ -112,9 +110,7 @@ train_gen = flow_from_dataframe(
                 core_idg, train_df, path_col = 'path', y_col = 'boneage_zscore', 
                 target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 8)
                 # (target_size, color_mode, batch_size)
-                # batch_size란 : 뭔가를 하나 수정할 때 모든 데이터를 다시 처리하는 것은 낭비이므로, 
-                #        훈련 데이터를 여러 개의 작은 배치로 나누어 매개변수를 수정하는데, 
-                #        이때의 작은 배치 사이즈를 말한다.
+
 valid_gen = flow_from_dataframe(
                 core_idg, valid_df, path_col = 'path', y_col = 'boneage_zscore', 
                 target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 256) 
@@ -127,12 +123,11 @@ test_X, test_Y = next( flow_from_dataframe(
                         # one big batch
 
 t_x, t_y = next(train_gen)
-#fig, m_axs = plt.subplots(2, 4, figsize = (16, 8))
-#for (c_x, c_y, c_ax) in zip(t_x, t_y, m_axs.flatten()):
-#    c_ax.imshow(c_x[:,:,0], cmap = 'bone', vmin = -127, vmax = 127)
-#    c_ax.set_title('%2.0f months' % (c_y*boneage_div+boneage_mean))
-#    c_ax.axis('off')
-#plt.show()    
+fig, m_axs = plt.subplots(2, 4, figsize = (16, 8))
+for (c_x, c_y, c_ax) in zip(t_x, t_y, m_axs.flatten()):
+    c_ax.imshow(c_x[:,:,0], cmap = 'bone', vmin = -127, vmax = 127)
+    c_ax.set_title('%2.0f months' % (c_y*boneage_div+boneage_mean))
+    c_ax.axis('off')
 
 # print(t_x)
 print(t_x.shape)
@@ -142,86 +137,11 @@ print(t_y.shape)
 ###########################
 ###Create a Simple Model###
 ###########################
-import keras
 from keras.applications.inception_v3 import InceptionV3
-#from inception_v4 import inception_v4
-from keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten
-from keras.models import Sequential
-from IPython.display import clear_output
+from keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten, Input
+from keras.optimizers import adam, SGD
+from keras.models import Sequential, Model
 
-'''
-class PlotLearning(Callback):
-    def on_train_begin(self, logs={}):
-        self.i = 0
-        self.x = []
-        self.losses = []
-        self.val_losses = []
-        self.acc = []
-        self.val_acc = []
-        self.fig = plt.figure()
-        
-        self.logs = []
-
-    def on_epoch_end(self, epoch, logs={}):
-        
-        self.logs.append(logs)
-        self.x.append(self.i)
-        self.losses.append(logs.get('loss'))
-        self.val_losses.append(logs.get('val_loss'))
-        self.acc.append(logs.get('acc'))
-        self.val_acc.append(logs.get('val_acc'))
-        self.i += 1
-        f, (ax1, ax2) = plt.subplots(1, 2, sharex=True)
-        
-        clear_output(wait=True)
-        
-        ax1.set_yscale('log')
-        ax1.plot(self.x, self.losses, label="loss")
-        ax1.plot(self.x, self.val_losses, label="val_loss")
-        ax1.legend()
-        
-        ax2.plot(self.x, self.acc, label="accuracy")
-        ax2.plot(self.x, self.val_acc, label="validation accuracy")
-        ax2.legend()
-        
-        plt.show();
-'''        
-# updatable plot
-# a minimal example (sort of)
-class PlotLosses(keras.callbacks.Callback):
-    def on_train_begin(self, logs={}):
-        self.i = 0
-        self.x = []
-        self.losses = []
-        self.val_losses = []
-        
-        self.fig = plt.figure()
-        
-        self.logs = []
-
-    def on_epoch_end(self, epoch, logs={}):
-        
-        self.logs.append(logs)
-        self.x.append(self.i)
-        self.losses.append(logs.get('loss'))
-        self.val_losses.append(logs.get('val_loss'))
-        self.i += 1
-        
-        clear_output(wait=True)
-        plt.plot(self.x, self.losses, label="loss")
-        plt.plot(self.x, self.val_losses, label="val_loss")
-        plt.title('model loss')
-        plt.ylabel('loss')
-        plt.xlabel('epoch')
-        plt.legend()
-        plt.show()
-
-        
-base_iv3_model = InceptionV3(input_shape =  t_x.shape[1:],
-                              include_top = False, 
-                              weights = 'imagenet')
-
-'''
 base_model =  InceptionV3(weights='imagenet', include_top=False)
 input = Input(shape=(*IMG_SIZE, 3))
 output_invV3 = base_model(input)
@@ -229,27 +149,12 @@ x = Flatten()(output_invV3)
 x = Dense(512, activation='relu')(x)
 predictions = Dense(1)(x)
 model = Model(inputs=input, outputs=predictions)
-'''
 
-
-'''
-base_iv3_model = inception_v4(num_classes =  1000,
-                              dropout_keep_prob = 0,
-                              weights = 'imagenet',
-                              include_top = False)
-'''
-# include_top : whether to include the fully-connected layer at the top of the network.
-# weights : one of None (random initialization) or 'imagenet' (pre-training on ImageNet).
-base_iv3_model.trainable = False
-
-bone_age_model = Sequential()
-
-bone_age_model.add(base_iv3_model)
-bone_age_model.add(GlobalAveragePooling2D())
-bone_age_model.add(Dropout(0.5))
-bone_age_model.add(Dense(1024, activation = 'tanh'))
-bone_age_model.add(Dropout(0.25))
-bone_age_model.add(Dense(1, activation = 'linear')) # linear is what 16bit did
+from keras.metrics import mean_absolute_error
+def mae_months(in_gt, in_pred):
+    return mean_absolute_error(boneage_div*in_gt, boneage_div*in_pred)
+myOptimizer = adam(lr = 1e-3)
+model.compile(optimizer = myOptimizer, loss = 'mse', metrics = [mae_months])
 '''
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -271,11 +176,14 @@ Trainable params: 2,099,201
 Non-trainable params: 21,802,784
 '''
 
-from keras.metrics import mean_absolute_error
-def mae_months(in_gt, in_pred):
-    return mean_absolute_error(boneage_div*in_gt, boneage_div*in_pred)
-#optimizer = adam(lr = 1e-3)
-bone_age_model.compile(optimizer = 'adam', loss = 'mse', metrics = [mae_months])
+from keras import optimizers
+# sgd = optimizers.adam(lr=0.01)# 별이언니
+# sgd = optimizers.adam(lr=0.001)# 우정언니
+# sgd = optimizers.adam(lr=0.005) # 상희
+# sgd = optimizers.SGD(lr=0.01) #우정 언니
+# sgd = optimizers.SGD(lr=0.001) #별이언니
+# sgd = optimizers.SGD(lr=0.005)
+# bone_age_model.compile(optimizer = sgd, loss = 'mse', metrics = [mae_months])
 # metrics :  a function that is used to judge the performance of your model. 
 # bone_age_model.summary()
 
@@ -288,7 +196,7 @@ weight_path="{}_weights.best.hdf5".format('bone_age')
 checkpoint = ModelCheckpoint(
                 weight_path, # filepath : string, path to save the model file
                 monitor='val_loss', # monitor : quantity to monitor
-                verbose=0, # verbosity mode, 0 or 1
+                verbose=1, # verbosity mode, 0 or 1
                 save_best_only=True, # if save_best_only=True -> the latest best model \ 
                                      # according to the quantity monitored will not be overwritten.
                 mode='min', # one of {auto, min, max}, the decision to overwrite 
@@ -301,7 +209,7 @@ reduceLROnPlat = ReduceLROnPlateau(
                     factor=0.8, # factor by which the learning rate will be reduced
                     patience=10, # number of epochs with no improvement 
                                  # after which learning rate will be reduced.
-                    verbose=0, # 0: quiet, 1: update messages
+                    verbose=1, # 0: quiet, 1: update messages
                     mode='auto', # one of {auto, min, max} In min mode, lr will be reduced 
                                  # when the quantity monitored has stopped decreasing
                     epsilon=0.0001, # threshold(문턱) for measuring the new optimum(최적의결과), 
@@ -313,101 +221,27 @@ reduceLROnPlat = ReduceLROnPlateau(
 early = EarlyStopping(monitor="val_loss", 
                       mode="min", 
                       patience=5) # probably needs to be more patient, but kaggle time is limited
-
-#plot_losses = PlotLosses()
-
 callbacks_list = [checkpoint, early, reduceLROnPlat]
-#callbacks_list = [checkpoint, early, reduceLROnPlat, plot_losses]
 
 ####################
 ###Model Training###
 ####################
-bone_age_model.fit_generator(
-#history = bone_age_model.fit_generator(
+model.fit_generator(
     train_gen, 
-    steps_per_epoch=50, # Total number of steps (batches of samples) to yield from generator
-                         # 생성기에서 얻는 총 단계 수 (샘플 배치)입니다.
+    steps_per_epoch=140, # Total number of steps (batches of samples) to yield from generator
                          # It should typically be equal to the number of samples 
                          # of your dataset divided by the batch size
-                         # 일반적으로 데이터 셋의 샘플 수를 배치 사이즈로 나눈 값과 같아야 합니다. ( = 데이터셋 샘플수 / 배치사이즈 )
     validation_data = (test_X, test_Y), # This can be either
                                         # A generator for the validation data
                                         # A tuple (inputs, targets)
                                         # A tuple (inputs, targets, sample_weights)
-    epochs = 50, #  total number of iterations on the data # 데이터의 총 반복 횟수
+    epochs = 30, #  total number of iterations on the data
     callbacks = callbacks_list ) # List of callbacks to be called during training.
 
-#PlotLosses()
 ##########################
 ###Evaluate the Results###
 ##########################
-bone_age_model.load_weights(weight_path)
-pred_Y = boneage_div*bone_age_model.predict(test_X, batch_size = 32, verbose = True)+boneage_mean
+model.load_weights(weight_path)
+pred_Y = boneage_div*model.predict(test_X, batch_size = 32, verbose = True)+boneage_mean
 test_Y_months = boneage_div*test_Y+boneage_mean
-# Finally, we trained the final model with a minibatch size of 16 for 500 epochs (approximately 50 hours) with the ADAM optimizer attempting to minimize mean absolute error of the output. We reduced the learning rate when the validation loss plateaued.                       
-# 마지막으로 ADAM 최적화 프로그램이 출력의 평균 절대 오류를 최소화하려고 시도하면서 500 에포크 (약 50 시간) 동안 미니 배치 크기 16으로 최종 모델을 교육했습니다. 검증 손실이 극대화되면 학습률이 감소합니다.
-
-'''
-# summarize history for mae_month
-plt.plot(history.history['mae_month'])
-plt.plot(history.history['val_mae_month'])
-plt.title('model mae_month')
-plt.ylabel('mae_month')
-plt.xlabel('epoch')
-plt.legend(['train_gen', 'validation_data'], loc='upper left')
-plt.show()
-
-# summarize history for loss
-plt.plot(history.history['loss'])
-plt.plot(history.history['val_loss'])
-plt.title('model loss')
-plt.ylabel('loss')
-plt.xlabel('epoch')
-plt.legend(['train_gen', 'validation_data'], loc='upper left')
-plt.show()
-'''      
-
-# Print loss
-#plt.plot(bone_age_model, 'k-', label='Loss')
-#plt.plot(bone_age_model.bone_age_model['loss'])
-#plt.title('Loss (MSE) per Epoch')
-#plt.xlabel('epoch')
-#plt.ylabel('loss')
-#plt.legend(loc='lower right')
-#plt.show()   
-
-'''
-import tensorflow as tf
-# Create graph session 
-sess = tf.Session()
-#############################################################################
-# 반복 영역
-#############################################################################
-loss_vec = []
-test_loss = []
-batch_size = 10
-for i in range(4):
-    rand_index = np.random.choice(len(t_x), size=batch_size)
-    rand_x = t_x[rand_index]
-    rand_y = np.transpose([t_y[rand_index]])
-    sess.run(train_gen, feed_dict={x: rand_x, y: rand_y})
- 
-    temp_loss = sess.run(loss, feed_dict={x: rand_x, y: rand_y})
-    loss_vec.append(temp_loss)
-     
-    test_temp_loss = sess.run(loss, feed_dict={x: test_X, y: np.transpose([test_Y])})
-    test_loss.append(test_temp_loss)
-    #if (i+1) % 25 == 0:
-    #    print('Generation: ' + str(i+1) + '. Loss = ' + str(temp_loss))
-#############################################################################
-# 차트 그리기
-#############################################################################
-# Plot cost (MSE) over time
-plt.plot(loss_vec, 'k-', label='Train Loss')
-plt.plot(test_loss, 'r--', label='Test Loss')
-plt.title('Loss (MSE) per Generation')
-plt.legend(loc='upper right')
-plt.xlabel('Generation')
-plt.ylabel('Loss')
-plt.show()    
-'''   
+                        
