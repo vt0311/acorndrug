@@ -27,8 +27,8 @@ age_df['gender'] = age_df['male'].map(lambda x: 'male' if x else 'female')
 boneage_mean = age_df['boneage'].mean()
 boneage_div = 2*age_df['boneage'].std()
 # we don't want normalization for now
-#boneage_mean = 0
-#boneage_div = 1.0
+boneage_mean = 0
+boneage_div = 1.0
 age_df['boneage_zscore'] = age_df['boneage'].map(lambda x: (x-boneage_mean)/boneage_div)
 age_df.dropna(inplace = True)
 age_df.sample(3)
@@ -182,7 +182,6 @@ class PlotLearning(Callback):
 '''        
 # updatable plot
 # a minimal example (sort of)
-'''
 class PlotLosses(keras.callbacks.Callback):
     def on_train_begin(self, logs={}):
         self.i = 0
@@ -210,7 +209,7 @@ class PlotLosses(keras.callbacks.Callback):
         plt.xlabel('epoch')
         plt.legend()
         plt.show()
-'''
+
         
 base_iv3_model = InceptionV3(input_shape =  t_x.shape[1:],
                               include_top = False, 
@@ -224,7 +223,6 @@ base_iv3_model = inception_v4(num_classes =  1000,
 # include_top : whether to include the fully-connected layer at the top of the network.
 # weights : one of None (random initialization) or 'imagenet' (pre-training on ImageNet).
 base_iv3_model.trainable = False
-
 
 bone_age_model = Sequential()
 
@@ -272,7 +270,7 @@ weight_path="{}_weights.best.hdf5".format('bone_age')
 checkpoint = ModelCheckpoint(
                 weight_path, # filepath : string, path to save the model file
                 monitor='val_loss', # monitor : quantity to monitor
-                verbose=1, # verbosity mode, 0 or 1
+                verbose=0, # verbosity mode, 0 or 1
                 save_best_only=True, # if save_best_only=True -> the latest best model \ 
                                      # according to the quantity monitored will not be overwritten.
                 mode='min', # one of {auto, min, max}, the decision to overwrite 
@@ -285,7 +283,7 @@ reduceLROnPlat = ReduceLROnPlateau(
                     factor=0.8, # factor by which the learning rate will be reduced
                     patience=10, # number of epochs with no improvement 
                                  # after which learning rate will be reduced.
-                    verbose=1, # 0: quiet, 1: update messages
+                    verbose=0, # 0: quiet, 1: update messages
                     mode='auto', # one of {auto, min, max} In min mode, lr will be reduced 
                                  # when the quantity monitored has stopped decreasing
                     epsilon=0.0001, # threshold(문턱) for measuring the new optimum(최적의결과), 
@@ -309,7 +307,7 @@ callbacks_list = [checkpoint, early, reduceLROnPlat]
 bone_age_model.fit_generator(
 #history = bone_age_model.fit_generator(
     train_gen, 
-    steps_per_epoch=10, # Total number of steps (batches of samples) to yield from generator
+    steps_per_epoch=5, # Total number of steps (batches of samples) to yield from generator
                          # 생성기에서 얻는 총 단계 수 (샘플 배치)입니다.
                          # It should typically be equal to the number of samples 
                          # of your dataset divided by the batch size
@@ -318,7 +316,7 @@ bone_age_model.fit_generator(
                                         # A generator for the validation data
                                         # A tuple (inputs, targets)
                                         # A tuple (inputs, targets, sample_weights)
-    epochs = 4, #  total number of iterations on the data # 데이터의 총 반복 횟수
+    epochs = 2, #  total number of iterations on the data # 데이터의 총 반복 횟수
     callbacks = callbacks_list ) # List of callbacks to be called during training.
 
 #PlotLosses()

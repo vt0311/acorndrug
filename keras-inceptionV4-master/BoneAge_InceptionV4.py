@@ -9,8 +9,8 @@ from glob import glob
 ################
 ### Overview ###
 ################
-base_bone_dir = 'C:/BoneAge/'
-#base_bone_dir = 'D:/BoneAge/'
+#base_bone_dir = 'C:/BoneAge/'
+base_bone_dir = 'D:/BoneAge/'
 print(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
 
 age_df = pd.read_csv(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
@@ -27,8 +27,8 @@ age_df['gender'] = age_df['male'].map(lambda x: 'male' if x else 'female')
 boneage_mean = age_df['boneage'].mean()
 boneage_div = 2*age_df['boneage'].std()
 # we don't want normalization for now
-#boneage_mean = 0
-#boneage_div = 1.0
+boneage_mean = 0
+boneage_div = 1.0
 age_df['boneage_zscore'] = age_df['boneage'].map(lambda x: (x-boneage_mean)/boneage_div)
 age_df.dropna(inplace = True)
 age_df.sample(3)
@@ -66,7 +66,7 @@ print('New Data Size:', train_df.shape[0], 'Old Size:', raw_train_df.shape[0])
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications.imagenet_utils import preprocess_input
 
-IMG_SIZE = (299, 299) # default size for inception_v3
+IMG_SIZE = (244, 244) 
 core_idg = ImageDataGenerator(
     samplewise_center=False, # Set each sample mean to 0
     samplewise_std_normalization=False, # Divide each input by its std
@@ -133,24 +133,13 @@ print(t_y.shape)
 ###########################
 ###Create a Simple Model###
 ###########################
-#from keras.applications.inception_v3 import InceptionV3
-#from inception_v4 import inception_v4
+
 from inception_v4_2 import create_inception_v4
 from keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten
 from keras.models import Sequential
 
-#base_iv3_model = InceptionV3(input_shape =  t_x.shape[1:],
-#                              include_top = False, 
-#                              weights = 'imagenet')
 
-#base_iv3_model = inception_v4(num_classes =  1001,
-#                              dropout_keep_prob = 0,
-#                              weights = 'imagenet',
-#                              include_top = False)
-                              
-
-base_iv3_model = create_inception_v4(nb_classes=1001, load_weights=True
-                              )
+base_iv3_model = create_inception_v4(nb_classes=1001, load_weights=True)
 
 # include_top : whether to include the fully-connected layer at the top of the network.
 # weights : one of None (random initialization) or 'imagenet' (pre-training on ImageNet).
@@ -227,7 +216,7 @@ reduceLROnPlat = ReduceLROnPlateau(
 
 early = EarlyStopping(monitor="val_loss", 
                       mode="min", 
-                      patience=5) # probably needs to be more patient, but kaggle time is limited
+                      patience=100) # probably needs to be more patient, but kaggle time is limited
 callbacks_list = [checkpoint, early, reduceLROnPlat]
 
 ####################

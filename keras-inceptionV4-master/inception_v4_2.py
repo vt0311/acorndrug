@@ -34,7 +34,7 @@ def inception_stem(input):
     else:
         channel_axis = -1
 
-    # Input Shape is 299 x 299 x 3 (th) or 3 x 299 x 299 (th)
+    # Input Shape is 244 x 244 x 3 (th) or 3 x 244 x 244 (th)
     x = conv_block(input, 32, 3, 3, subsample=(2, 2), border_mode='valid')
     x = conv_block(x, 32, 3, 3, border_mode='valid')
     x = conv_block(x, 64, 3, 3)
@@ -182,11 +182,11 @@ def create_inception_v4(nb_classes=1001, load_weights=True):
     '''
 
     if K.image_dim_ordering() == 'th':
-        init = Input((3, 299, 299))
+        init = Input((3, 244, 244))
     else:
-        init = Input((299, 299, 3))
+        init = Input((244, 244, 3))
 
-    # Input Shape is 299 x 299 x 3 (tf) or 3 x 299 x 299 (th)
+    # Input Shape is 244 x 244 x 3 (tf) or 3 x 244 x 244 (th)
     x = inception_stem(init)
 
     # 4 x Inception A
@@ -208,7 +208,7 @@ def create_inception_v4(nb_classes=1001, load_weights=True):
         x = inception_C(x)
 
     # Average Pooling
-    x = AveragePooling2D((8, 8))(x)
+    x = AveragePooling2D((6, 6))(x)
 
     # Dropout
     x = Dropout(0.8)(x)
