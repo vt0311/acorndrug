@@ -68,7 +68,7 @@ from keras.applications.imagenet_utils import preprocess_input
 
 #IMG_SIZE = (224, 224) # default size for inception_v3
 #IMG_SIZE = (299, 299)
-IMG_SIZE = (256, 256) # 02.21 회의
+IMG_SIZE = (256, 256) # 02.21 회의 (CPU)
 #IMG_SIZE = (500, 500) # 02.21 회의(GPU)
 core_idg = ImageDataGenerator(
     samplewise_center=False, # Set each sample mean to 0
