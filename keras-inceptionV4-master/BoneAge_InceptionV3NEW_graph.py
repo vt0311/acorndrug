@@ -263,7 +263,7 @@ plt.show()
 ##########################
 model.load_weights(weight_path)
 pred_Y = boneage_div*model.predict(test_X, batch_size = 32, verbose = True)+boneage_mean
-print('pred_Y:',pred_Y)
+#print('pred_Y:',pred_Y)
 test_Y_months = boneage_div*test_Y+boneage_mean
-print('test_Y_months:', test_Y_months)
+#print('test_Y_months:', test_Y_months)
                         
