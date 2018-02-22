@@ -111,20 +111,27 @@ train_gen = flow_from_dataframe(
                 core_idg, train_df, path_col = 'path', y_col = 'boneage_zscore', 
                 target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 8)
                 # (target_size, color_mode, batch_size)
+#print('train_gen:', train_gen.shape)
+#print('train_gen:', train_gen['t_x'])
+                
 #print('train_gen.history.keys:', train_gen.history.keys())
 valid_gen = flow_from_dataframe(
                 core_idg, valid_df, path_col = 'path', y_col = 'boneage_zscore', 
                 target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 256) 
                 # we can use much larger batches for evaluation
+#print('valid_gen:', valid_gen.shape)
                 
 # used a fixed dataset for evaluating the algorithm
 test_X, test_Y = next( flow_from_dataframe(
                         core_idg, valid_df, path_col = 'path', y_col = 'boneage_zscore', 
-                        #target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 1024))
-                         target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 128))  
+                        target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 1024))
+                        # target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 128))  
                         # one big batch
+#print('test_X:', test_X)
+#print('test_Y:', test_Y)
 
 t_x, t_y = next(train_gen)
+
 #fig, m_axs = plt.subplots(2, 4, figsize = (16, 8))
 #for (c_x, c_y, c_ax) in zip(t_x, t_y, m_axs.flatten()):
 #    c_ax.imshow(c_x[:,:,0], cmap = 'bone', vmin = -127, vmax = 127)
@@ -139,11 +146,22 @@ print('t_y.shape:', t_y.shape)
 ###########################
 ###Create a Simple Model###
 ###########################
+import keras
 from keras.applications.inception_v3 import InceptionV3
 from keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten, Input
 from keras.optimizers import adam, SGD
 from keras.models import Sequential, Model
 
+
+'''
+class LossHistory(keras.callbacks.Callback):
+    def on_train_begin(self, logs={}):
+        self.losses = []
+
+    def on_batch_end(self, batch, logs={}):
+        self.losses.append(logs.get('loss'))
+'''
+        
 base_model =  InceptionV3(weights='imagenet', include_top=False)
 input = Input(shape=(*IMG_SIZE, 3))
 output_invV3 = base_model(input)
@@ -219,6 +237,10 @@ reduceLROnPlat = ReduceLROnPlateau(
 early = EarlyStopping(monitor="val_loss", 
                       mode="min", 
                       patience=50) # probably needs to be more patient, but kaggle time is limited
+
+#history = LossHistory()
+
+#callbacks_list = [checkpoint, early, reduceLROnPlat, history]
 callbacks_list = [checkpoint, early, reduceLROnPlat]
 
 ####################
@@ -226,36 +248,39 @@ callbacks_list = [checkpoint, early, reduceLROnPlat]
 ####################
 model.fit_generator(
     train_gen, 
-    steps_per_epoch=1, # Total number of steps (batches of samples) to yield from generator
+    steps_per_epoch=10, # Total number of steps (batches of samples) to yield from generator
                          # It should typically be equal to the number of samples 
                          # of your dataset divided by the batch size
     validation_data = (test_X, test_Y), # This can be either
                                         # A generator for the validation data
                                         # A tuple (inputs, targets)
                                         # A tuple (inputs, targets, sample_weights)
-    epochs = 1, #  total number of iterations on the data
+    epochs = 10, #  total number of iterations on the data
     callbacks = callbacks_list ) # List of callbacks to be called during training.
 
-history = model.fit(t_x, t_y, validation_split=0.33, epochs=10, batch_size=10, verbose=0)
-print('history.history.keys:', history.history.keys())
+# 그래프를 위해 만든 부분 - 하승원 추가
+history = model.fit(t_x, t_y, validation_split=0.15, epochs=10, batch_size=10, verbose=0)
+#print('history.history.keys:', history.history.keys())
 #history.history.keys: dict_keys(['val_loss', 'val_mae_months', 'loss', 'mae_months', 'lr'])
 
 # summarize history for accuracy
 plt.plot(history.history['mae_months'])
 plt.plot(history.history['val_mae_months'])
-plt.title('model mae_months')
+plt.title('Graph of mae_months')
 plt.ylabel('mae_months')
 plt.xlabel('epoch')
-# plt.legend(['train', 'test'], loc='upper left')
+#plt.legend(['mae_months', 'val_mae_months'], loc='upper left')
+plt.legend(['val_mae_months', 'mae_months'], loc='upper right')
+#plt.legend(['train', 'test'], loc='upper left')
 plt.show()
 
 # summarize history for loss
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
-plt.title('model loss')
+plt.title('Graph of loss')
 plt.ylabel('loss')
 plt.xlabel('epoch')
-#plt.legend(['train', 'test'], loc='upper left')
+plt.legend(['val_loss', 'loss'], loc='upper right')
 plt.show()
 
 ##########################
