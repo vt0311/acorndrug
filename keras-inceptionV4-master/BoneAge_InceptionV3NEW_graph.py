@@ -131,10 +131,10 @@ t_x, t_y = next(train_gen)
 #    c_ax.set_title('%2.0f months' % (c_y*boneage_div+boneage_mean))
 #    c_ax.axis('off')
 
-# print(t_x)
-print(t_x.shape)
-# print(t_y)
-print(t_y.shape)
+#print('t_x:', t_x)
+print('t_x.shape:', t_x.shape )
+#print('t_y:', t_y)
+print('t_y.shape:', t_y.shape)
     
 ###########################
 ###Create a Simple Model###
@@ -236,7 +236,7 @@ model.fit_generator(
     epochs = 1, #  total number of iterations on the data
     callbacks = callbacks_list ) # List of callbacks to be called during training.
 
-history = model.fit(test_X, test_Y, validation_split=0.33, epochs=10, batch_size=10, verbose=0)
+history = model.fit(t_x, t_y, validation_split=0.33, epochs=10, batch_size=10, verbose=0)
 print('history.history.keys:', history.history.keys())
 #history.history.keys: dict_keys(['val_loss', 'val_mae_months', 'loss', 'mae_months', 'lr'])
 
@@ -263,5 +263,7 @@ plt.show()
 ##########################
 model.load_weights(weight_path)
 pred_Y = boneage_div*model.predict(test_X, batch_size = 32, verbose = True)+boneage_mean
+print('pred_Y:',pred_Y)
 test_Y_months = boneage_div*test_Y+boneage_mean
+print('test_Y_months:', test_Y_months)
                         
