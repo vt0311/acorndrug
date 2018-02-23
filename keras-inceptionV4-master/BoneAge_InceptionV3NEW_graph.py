@@ -14,7 +14,7 @@ from glob import glob
 ################
 ### Overview ###
 ################
-base_bone_dir = 'D:/BoneAge/'
+base_bone_dir = 'C:/BoneAge/'
 print(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
 
 age_df = pd.read_csv(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
@@ -70,8 +70,8 @@ print('New Data Size:', train_df.shape[0], 'Old Size:', raw_train_df.shape[0])
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications.imagenet_utils import preprocess_input
 
-IMG_SIZE = (224, 224) # default size for inception_v3
-#IMG_SIZE = (256, 256)
+#IMG_SIZE = (224, 224) # default size for inception_v3
+IMG_SIZE = (256, 256)
 core_idg = ImageDataGenerator(
     samplewise_center=False, # Set each sample mean to 0
     samplewise_std_normalization=False, # Divide each input by its std
@@ -223,7 +223,7 @@ checkpoint = ModelCheckpoint(
 reduceLROnPlat = ReduceLROnPlateau(
                     monitor='val_loss', # quantity to be monitored.
                     factor=0.8, # factor by which the learning rate will be reduced
-                    patience=10, # number of epochs with no improvement 
+                    patience=500, # number of epochs with no improvement 
                                  # after which learning rate will be reduced.
                     verbose=1, # 0: quiet, 1: update messages
                     mode='auto', # one of {auto, min, max} In min mode, lr will be reduced 
@@ -236,7 +236,7 @@ reduceLROnPlat = ReduceLROnPlateau(
 
 early = EarlyStopping(monitor="val_loss", 
                       mode="min", 
-                      patience=50) # probably needs to be more patient, but kaggle time is limited
+                      patience=500) # probably needs to be more patient, but kaggle time is limited
 
 #history = LossHistory()
 
@@ -248,7 +248,7 @@ callbacks_list = [checkpoint, early, reduceLROnPlat]
 ####################
 model.fit_generator(
     train_gen, 
-    steps_per_epoch=10, # Total number of steps (batches of samples) to yield from generator
+    steps_per_epoch=50, # Total number of steps (batches of samples) to yield from generator
                          # It should typically be equal to the number of samples 
                          # of your dataset divided by the batch size
     validation_data = (test_X, test_Y), # This can be either
@@ -259,7 +259,7 @@ model.fit_generator(
     callbacks = callbacks_list ) # List of callbacks to be called during training.
 
 # 그래프를 위해 만든 부분 - 하승원 추가
-history = model.fit(t_x, t_y, validation_split=0.15, epochs=10, batch_size=10, verbose=0)
+history = model.fit(t_x, t_y, validation_split=0.15, epochs=10, batch_size=8, verbose=0)
 #print('history.history.keys:', history.history.keys())
 #history.history.keys: dict_keys(['val_loss', 'val_mae_months', 'loss', 'mae_months', 'lr'])
 
