@@ -263,7 +263,7 @@ history = model.fit(t_x, t_y, validation_split=0.15, epochs=10, batch_size=8, ve
 #print('history.history.keys:', history.history.keys())
 #history.history.keys: dict_keys(['val_loss', 'val_mae_months', 'loss', 'mae_months', 'lr'])
 
-# summarize history for accuracy
+# summarize history for mae_months
 plt.plot(history.history['mae_months'])
 plt.plot(history.history['val_mae_months'])
 plt.title('Graph of mae_months')
