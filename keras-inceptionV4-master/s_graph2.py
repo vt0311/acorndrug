@@ -1,10 +1,7 @@
-'''
-Created on 2018. 2. 21.
-
-@author: acorn
-'''
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import matplotlib
+matplotlib.use('Agg') # Must be before importing matplotlib.pyplot or pylab!
 import matplotlib.pyplot as plt # showing and rendering figures
 # io related
 # from skimage.io import imread
@@ -14,7 +11,9 @@ from glob import glob
 ################
 ### Overview ###
 ################
-base_bone_dir = 'C:/BoneAge/'
+base_bone_dir = '/home/modulabs/woojung/dataset/'
+#base_bone_dir = 'C:/BoneAge/'
+
 print(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
 
 age_df = pd.read_csv(os.path.join(base_bone_dir, 'boneage-training-dataset.csv'))
@@ -70,16 +69,16 @@ print('New Data Size:', train_df.shape[0], 'Old Size:', raw_train_df.shape[0])
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications.imagenet_utils import preprocess_input
 
-#IMG_SIZE = (224, 224) # default size for inception_v3
-IMG_SIZE = (256, 256)
+#IMG_SIZE = (256, 256) # default size for inception_v3
+IMG_SIZE = (500, 500)
 core_idg = ImageDataGenerator(
     samplewise_center=False, # Set each sample mean to 0
     samplewise_std_normalization=False, # Divide each input by its std
     horizontal_flip = True, # Randomly flip inputs horizontally
     vertical_flip = False, # Randomly flip inputs vertically
-    height_shift_range = 0.2, # Range for random horizontal shifts
-    width_shift_range = 0.2, # Range for random vertical shifts
-    rotation_range = 20, # Degree range for random rotations
+    height_shift_range = 0.15, # Range for random horizontal shifts
+    width_shift_range = 0.15, # Range for random vertical shifts
+    rotation_range = 5, # Degree range for random rotations
     shear_range = 0.01, # Shear(깍다) angle in counter-clockwise direction as radians 
     fill_mode = 'reflect',
     # One of {"constant", "nearest", "reflect" or "wrap"}. 
@@ -111,57 +110,38 @@ train_gen = flow_from_dataframe(
                 core_idg, train_df, path_col = 'path', y_col = 'boneage_zscore', 
                 target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 8)
                 # (target_size, color_mode, batch_size)
-#print('train_gen:', train_gen.shape)
-#print('train_gen:', train_gen['t_x'])
-                
-#print('train_gen.history.keys:', train_gen.history.keys())
+
 valid_gen = flow_from_dataframe(
                 core_idg, valid_df, path_col = 'path', y_col = 'boneage_zscore', 
                 target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 256) 
                 # we can use much larger batches for evaluation
-#print('valid_gen:', valid_gen.shape)
                 
 # used a fixed dataset for evaluating the algorithm
 test_X, test_Y = next( flow_from_dataframe(
                         core_idg, valid_df, path_col = 'path', y_col = 'boneage_zscore', 
-                        target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 1024))
-                        # target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 128))  
+                        target_size = IMG_SIZE, color_mode = 'rgb', batch_size = 1024)) 
                         # one big batch
-#print('test_X:', test_X)
-#print('test_Y:', test_Y)
 
 t_x, t_y = next(train_gen)
-
 #fig, m_axs = plt.subplots(2, 4, figsize = (16, 8))
 #for (c_x, c_y, c_ax) in zip(t_x, t_y, m_axs.flatten()):
 #    c_ax.imshow(c_x[:,:,0], cmap = 'bone', vmin = -127, vmax = 127)
 #    c_ax.set_title('%2.0f months' % (c_y*boneage_div+boneage_mean))
 #    c_ax.axis('off')
 
-#print('t_x:', t_x)
-print('t_x.shape:', t_x.shape )
-#print('t_y:', t_y)
-print('t_y.shape:', t_y.shape)
+# print(t_x)
+print(t_x.shape)
+# print(t_y)
+print(t_y.shape)
     
 ###########################
 ###Create a Simple Model###
 ###########################
-import keras
 from keras.applications.inception_v3 import InceptionV3
 from keras.layers import GlobalAveragePooling2D, Dense, Dropout, Flatten, Input
-from keras.optimizers import adam, SGD
+from keras.optimizers import adam, SGD, Nadam, RMSprop, Adagrad
 from keras.models import Sequential, Model
 
-
-'''
-class LossHistory(keras.callbacks.Callback):
-    def on_train_begin(self, logs={}):
-        self.losses = []
-
-    def on_batch_end(self, batch, logs={}):
-        self.losses.append(logs.get('loss'))
-'''
-        
 base_model =  InceptionV3(weights='imagenet', include_top=False)
 input = Input(shape=(*IMG_SIZE, 3))
 output_invV3 = base_model(input)
@@ -170,10 +150,11 @@ x = Dense(512, activation='relu')(x)
 predictions = Dense(1)(x)
 model = Model(inputs=input, outputs=predictions)
 
+
 from keras.metrics import mean_absolute_error
 def mae_months(in_gt, in_pred):
     return mean_absolute_error(boneage_div*in_gt, boneage_div*in_pred)
-myOptimizer = adam(lr = 1e-3)
+myOptimizer = Adagrad(lr = 1e-3)
 model.compile(optimizer = myOptimizer, loss = 'mse', metrics = [mae_months])
 '''
 Layer (type)                 Output Shape              Param #   
@@ -196,8 +177,12 @@ Trainable params: 2,099,201
 Non-trainable params: 21,802,784
 '''
 
-#from keras import optimizers
-
+from keras import optimizers
+# sgd = optimizers.adam(lr=0.01)# 별이언니
+# sgd = optimizers.adam(lr=0.001)# 우정언니
+# sgd = optimizers.adam(lr=0.005) # 상희
+# sgd = optimizers.SGD(lr=0.01) #우정 언니
+# sgd = optimizers.SGD(lr=0.001) #별이언니
 # sgd = optimizers.SGD(lr=0.005)
 # bone_age_model.compile(optimizer = sgd, loss = 'mse', metrics = [mae_months])
 # metrics :  a function that is used to judge the performance of your model. 
@@ -223,7 +208,7 @@ checkpoint = ModelCheckpoint(
 reduceLROnPlat = ReduceLROnPlateau(
                     monitor='val_loss', # quantity to be monitored.
                     factor=0.8, # factor by which the learning rate will be reduced
-                    patience=500, # number of epochs with no improvement 
+                    patience=300, # number of epochs with no improvement 
                                  # after which learning rate will be reduced.
                     verbose=1, # 0: quiet, 1: update messages
                     mode='auto', # one of {auto, min, max} In min mode, lr will be reduced 
@@ -236,33 +221,73 @@ reduceLROnPlat = ReduceLROnPlateau(
 
 early = EarlyStopping(monitor="val_loss", 
                       mode="min", 
-                      patience=500) # probably needs to be more patient, but kaggle time is limited
-
-#history = LossHistory()
-
-#callbacks_list = [checkpoint, early, reduceLROnPlat, history]
+                      patience=300) # probably needs to be more patient, but kaggle time is limited
 callbacks_list = [checkpoint, early, reduceLROnPlat]
 
 ####################
 ###Model Training###
 ####################
-model.fit_generator(
+history2=model.fit_generator(
     train_gen, 
-    steps_per_epoch=50, # Total number of steps (batches of samples) to yield from generator
+    #steps_per_epoch=140, # Total number of steps (batches of samples) to yield from generator
+	steps_per_epoch=500,
                          # It should typically be equal to the number of samples 
                          # of your dataset divided by the batch size
     validation_data = (test_X, test_Y), # This can be either
                                         # A generator for the validation data
                                         # A tuple (inputs, targets)
                                         # A tuple (inputs, targets, sample_weights)
-    epochs = 10, #  total number of iterations on the data
+    epochs = 50, #  total number of iterations on the data
+	# epochs = 300
     callbacks = callbacks_list ) # List of callbacks to be called during training.
 
+
+
+fig3 = plt.figure()
+# summarize history for mae_months
+plt.plot(history2.history['mae_months'])
+plt.plot(history2.history['val_mae_months'])
+plt.title('Graph of mae_months')
+plt.ylabel('mae_months')
+plt.xlabel('epoch')
+plt.legend(['mae_months', 'val_mae_months'], loc='upper right')
+#plt.legend(['val_mae_months', 'mae_months'], loc='upper right')
+#plt.legend(['train', 'test'], loc='upper left')
+#plt.show()
+fig3.savefig('fig_mae_months_graph3.png')
+print('figure3 saved!')
+
+fig4 = plt.figure()
+# summarize history for loss
+plt.plot(history2.history['loss'])
+plt.plot(history2.history['val_loss'])
+plt.title('Graph of loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+#plt.legend(['val_loss', 'loss'], loc='upper right')
+plt.legend(['loss', 'val_loss'], loc='upper right')
+#plt.show()
+fig4.savefig('fig_loss_graph4.png')
+print('figure4 saved!')
+
+'''
 # 그래프를 위해 만든 부분 - 하승원 추가
-history = model.fit(t_x, t_y, validation_split=0.15, epochs=10, batch_size=8, verbose=0)
+#history = model.fit(t_x, t_y, validation_split=0.15, epochs=10, batch_size=8, verbose=0)
+history = model.fit(t_x, t_y, 
+#steps_per_epoch=2, 
+validation_split=0.15,
+validation_data = (test_X, test_Y), 
+epochs=5,
+batch_size=32
+#verbose=0
+#validation_steps=None
+)
+#history = model.fit(t_x, t_y, validation_split=0.15, epochs=10, batch_size=256, verbose=0)
+#history = model.fit(t_x, t_y, validation_split=0.15, epochs=10, batch_size=1024, verbose=0)
 #print('history.history.keys:', history.history.keys())
 #history.history.keys: dict_keys(['val_loss', 'val_mae_months', 'loss', 'mae_months', 'lr'])
 
+fig = plt.figure()
 # summarize history for mae_months
 plt.plot(history.history['mae_months'])
 plt.plot(history.history['val_mae_months'])
@@ -271,11 +296,12 @@ plt.ylabel('mae_months')
 plt.xlabel('epoch')
 plt.legend(['mae_months', 'val_mae_months'], loc='upper right')
 #plt.legend(['val_mae_months', 'mae_months'], loc='upper right')
-#plt.legend(['train', 'test'], loc='upper left')
-plt.show()
-plt.savefig('mae_months_graph.png')
-fig.savefig('mae_months_graph.png')
 
+#plt.show()
+fig.savefig('fig_mae_months_graph1.png')
+print('figure1 saved!')
+
+fig2 = plt.figure()
 # summarize history for loss
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
@@ -284,15 +310,15 @@ plt.ylabel('loss')
 plt.xlabel('epoch')
 #plt.legend(['val_loss', 'loss'], loc='upper right')
 plt.legend(['loss', 'val_loss'], loc='upper right')
-plt.show()
-plt.savefig('loss_graph.png')
+#plt.show()
+fig2.savefig('fig_loss_graph2.png')
+print('figure2 saved!')
+'''
 
 ##########################
 ###Evaluate the Results###
 ##########################
 model.load_weights(weight_path)
 pred_Y = boneage_div*model.predict(test_X, batch_size = 32, verbose = True)+boneage_mean
-#print('pred_Y:',pred_Y)
 test_Y_months = boneage_div*test_Y+boneage_mean
-#print('test_Y_months:', test_Y_months)
                         
